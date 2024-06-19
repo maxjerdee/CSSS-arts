@@ -1,0 +1,67 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1826,         59]
+NotebookOptionsPosition[      1253,         41]
+NotebookOutlinePosition[      1660,         57]
+CellTagsIndexPosition[      1617,         54]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chaotic trajectories", "Chapter",
+ CellChangeTimes->{{3.9277635213073425`*^9, 
+  3.9277635255741525`*^9}},ExpressionUUID->"f5d72e14-d0b0-4578-80df-\
+c19f03548075"],
+
+Cell["\<\
+Find an appropriate map for the Lorenz attractor to the 8x8 beatpad region \
+that will hopefully generate reasonable results\
+\>", "Text",
+ CellChangeTimes->{{3.927763530382612*^9, 
+  3.9277636029203634`*^9}},ExpressionUUID->"cf2fec0f-cb3c-4935-9041-\
+32b109d004f4"],
+
+Cell["https://highfellow.github.io/lorenz-attractor/attractor.html", "Text",
+ CellChangeTimes->{{3.9277660254698954`*^9, 
+  3.9277660277874556`*^9}},ExpressionUUID->"c8cf68d2-26ef-4f14-ad3d-\
+04150b4fbc41"]
+}, Open  ]]
+},
+WindowSize->{958., 1005.5},
+WindowMargins->{{Automatic, 955.5}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"bb80afd3-fdb4-46eb-ae6b-2d8d1f170fd5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 169, 3, 69, "Chapter",ExpressionUUID->"f5d72e14-d0b0-4578-80df-c19f03548075"],
+Cell[752, 27, 276, 6, 35, "Text",ExpressionUUID->"cf2fec0f-cb3c-4935-9041-32b109d004f4"],
+Cell[1031, 35, 206, 3, 35, "Text",ExpressionUUID->"c8cf68d2-26ef-4f14-ad3d-04150b4fbc41"]
+}, Open  ]]
+}
+]
+*)
+

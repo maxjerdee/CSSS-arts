@@ -20,6 +20,7 @@ website:
       - section: "Projects"
         contents:
           - projects/beatpad.qmd
+          - projects/p5test.qmd
 
 format:
   html:

@@ -1,0 +1,53 @@
+---
+title: "P5JS Test"
+---
+
+This page is to test p5js functionality in quarto notebooks.
+
+```{ojs}
+//| echo: false
+P5 = require("p5")
+
+function* createSketch(sketch) {
+  const element = DOM.element('div');
+  yield element;
+  const instance = new P5(sketch, element, true);
+  try {
+    while (true) {
+      yield element;
+    }
+  } finally {
+    instance.remove();
+  }
+}
+```
+
+## Donut test
+```{ojs}
+//| code-fold: true
+createSketch(s => {
+
+  s.setup = function() {
+    s.createCanvas(746, 746, s.WEBGL);
+    s.noStroke();
+  }
+
+  s.draw = function() {
+
+    s.background(0);
+
+    let locX = s.mouseX - s.height / 2;
+    let locY = s.mouseY - s.width / 2;  
+    
+    s.ambientLight(60, 60, 60);
+    s.pointLight(190, 80, 190, locX, locY, 100);
+    s.pointLight(80, 80, 190, 0, 0, 100);
+  
+    s.specularMaterial(255);
+    s.rotateX(s.frameCount * 0.01);
+    s.rotateY(s.frameCount * 0.01);
+    s.torus(150, 80, 64, 64);
+  }
+
+})
+```

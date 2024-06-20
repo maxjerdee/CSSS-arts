@@ -1,14 +1,36 @@
 [
   {
-    "objectID": "projects/beatpad.html",
-    "href": "projects/beatpad.html",
-    "title": "Beatpad Chaos",
+    "objectID": "projects/p5test.html",
+    "href": "projects/p5test.html",
+    "title": "P5JS Test",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "text": "This page is to test p5js functionality in quarto notebooks.\nP5 = require(\"p5\")\n\nfunction* createSketch(sketch) {\n  const element = DOM.element('div');\n  yield element;\n  const instance = new P5(sketch, element, true);\n  try {\n    while (true) {\n      yield element;\n    }\n  } finally {\n    instance.remove();\n  }\n}",
     "crumbs": [
       "Home",
       "Projects",
-      "Beatpad Chaos"
+      "P5JS Test"
+    ]
+  },
+  {
+    "objectID": "projects/p5test.html#donut-test",
+    "href": "projects/p5test.html#donut-test",
+    "title": "P5JS Test",
+    "section": "Donut test",
+    "text": "Donut test\n\n\nCode\ncreateSketch(s =&gt; {\n\n  s.setup = function() {\n    s.createCanvas(746, 746, s.WEBGL);\n    s.noStroke();\n  }\n\n  s.draw = function() {\n\n    s.background(0);\n\n    let locX = s.mouseX - s.height / 2;\n    let locY = s.mouseY - s.width / 2;  \n    \n    s.ambientLight(60, 60, 60);\n    s.pointLight(190, 80, 190, locX, locY, 100);\n    s.pointLight(80, 80, 190, 0, 0, 100);\n  \n    s.specularMaterial(255);\n    s.rotateX(s.frameCount * 0.01);\n    s.rotateY(s.frameCount * 0.01);\n    s.torus(150, 80, 64, 64);\n  }\n\n})",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "P5JS Test"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "crumbs": [
+      "Home"
     ]
   },
   {
@@ -23,13 +45,15 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "projects/beatpad.html",
+    "href": "projects/beatpad.html",
+    "title": "Beatpad Chaos",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
     "crumbs": [
-      "Home"
+      "Home",
+      "Projects",
+      "Beatpad Chaos"
     ]
   }
 ]

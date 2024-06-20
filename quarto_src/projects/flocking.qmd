@@ -2,6 +2,6 @@
 title: "Bird flocking"
 ---
 
-Simulation of birds flocking. 
+Simulation of birds flocking with wing synchronization.
 
 

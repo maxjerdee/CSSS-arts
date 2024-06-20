@@ -24,6 +24,13 @@
     ]
   },
   {
+    "objectID": "projects/flocking.html",
+    "href": "projects/flocking.html",
+    "title": "Bird flocking",
+    "section": "",
+    "text": "Simulation of birds flocking."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
@@ -57,15 +64,22 @@
     ]
   },
   {
-    "objectID": "projects/beatpad.html#donut-test",
-    "href": "projects/beatpad.html#donut-test",
+    "objectID": "projects/beatpad.html#button-layout-test",
+    "href": "projects/beatpad.html#button-layout-test",
     "title": "Beatpad Chaos",
-    "section": "Donut test",
-    "text": "Donut test\n\n\nCode\ncreateSketch(s =&gt; {\n\n  s.setup = function() {\n    s.createCanvas(746, 746, s.WEBGL);\n    s.noStroke();\n  }\n\n  s.draw = function() {\n\n    s.background(0);\n\n    let locX = s.mouseX - s.height / 2;\n    let locY = s.mouseY - s.width / 2;  \n    \n    s.ambientLight(60, 60, 60);\n    s.pointLight(190, 80, 190, locX, locY, 100);\n    s.pointLight(80, 80, 190, 0, 0, 100);\n  \n    s.specularMaterial(255);\n    s.rotateX(s.frameCount * 0.01);\n    s.rotateY(s.frameCount * 0.01);\n    s.torus(150, 80, 64, 64);\n  }\n\n})",
+    "section": "Button layout test",
+    "text": "Button layout test\nlet buttons = [];\nlet cols = 8;\nlet rows = 8;\nlet buttonSize = 50;\n\nfunction setup() {\n  createCanvas(cols * buttonSize, rows * buttonSize);\n  for (let i = 0; i &lt; cols; i++) {\n    buttons[i] = [];\n    for (let j = 0; j &lt; rows; j++) {\n      buttons[i][j] = new GridButton(i * buttonSize, j * buttonSize, buttonSize);\n    }\n  }\n}\n\nfunction draw() {\n  for (let i = 0; i &lt; cols; i++) {\n    for (let j = 0; j &lt; rows; j++) {\n      buttons[i][j].display();\n    }\n  }\n}\n\nfunction mousePressed() {\n  for (let i = 0; i &lt; cols; i++) {\n    for (let j = 0; j &lt; rows; j++) {\n      buttons[i][j].checkClick();\n    }\n  }\n}\n\nclass GridButton {\n  constructor(x, y, size) {\n    this.x = x;\n    this.y = y;\n    this.size = size;\n    this.color = color(255);\n  }\n\n  display() {\n    fill(this.color);\n    rect(this.x, this.y, this.size, this.size);\n  }\n\n  checkClick() {\n    if (mouseX &gt; this.x && mouseX &lt; this.x + this.size &&\n        mouseY &gt; this.y && mouseY &lt; this.y + this.size) {\n      this.color = color(random(255), random(255), random(255));\n    }\n  }\n}",
     "crumbs": [
       "Home",
       "Projects",
       "Beatpad Chaos"
     ]
+  },
+  {
+    "objectID": "projects/gallery.html",
+    "href": "projects/gallery.html",
+    "title": "Gallery of complexity",
+    "section": "",
+    "text": "Pretty pictures coming out of complexity research."
   }
 ]

@@ -23,32 +23,57 @@ function* createSketch(sketch) {
 }
 ```
 
-## Donut test
-```{ojs}
-//| code-fold: true
-createSketch(s => {
+## Button layout test
+```{js}
+let buttons = [];
+let cols = 8;
+let rows = 8;
+let buttonSize = 50;
 
-  s.setup = function() {
-    s.createCanvas(746, 746, s.WEBGL);
-    s.noStroke();
+function setup() {
+  createCanvas(cols * buttonSize, rows * buttonSize);
+  for (let i = 0; i < cols; i++) {
+    buttons[i] = [];
+    for (let j = 0; j < rows; j++) {
+      buttons[i][j] = new GridButton(i * buttonSize, j * buttonSize, buttonSize);
+    }
+  }
+}
+
+function draw() {
+  for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+      buttons[i][j].display();
+    }
+  }
+}
+
+function mousePressed() {
+  for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+      buttons[i][j].checkClick();
+    }
+  }
+}
+
+class GridButton {
+  constructor(x, y, size) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.color = color(255);
   }
 
-  s.draw = function() {
-
-    s.background(0);
-
-    let locX = s.mouseX - s.height / 2;
-    let locY = s.mouseY - s.width / 2;  
-    
-    s.ambientLight(60, 60, 60);
-    s.pointLight(190, 80, 190, locX, locY, 100);
-    s.pointLight(80, 80, 190, 0, 0, 100);
-  
-    s.specularMaterial(255);
-    s.rotateX(s.frameCount * 0.01);
-    s.rotateY(s.frameCount * 0.01);
-    s.torus(150, 80, 64, 64);
+  display() {
+    fill(this.color);
+    rect(this.x, this.y, this.size, this.size);
   }
 
-})
+  checkClick() {
+    if (mouseX > this.x && mouseX < this.x + this.size &&
+        mouseY > this.y && mouseY < this.y + this.size) {
+      this.color = color(random(255), random(255), random(255));
+    }
+  }
+}
 ```

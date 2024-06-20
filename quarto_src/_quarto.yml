@@ -19,7 +19,10 @@ website:
       
       - section: "Projects"
         contents:
-          - projects/beatpad.qmd
+          - projects/chaos_sampler.qmd
+          - projects/flocking.qmd
+          - projects/gallery.qmd
+          - projects/guessing.qmd
           - projects/p5test.qmd
 
 format:

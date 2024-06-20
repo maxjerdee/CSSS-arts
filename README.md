@@ -25,3 +25,10 @@ Have CSSS participants play this: https://www.wikiguess.io/ and look at the perf
 
 ## General inspirations
 A book! https://makingwithdata.org/about
+
+
+## How to edit these webpages
+Install quarto, here are some instructions on installation on linux: https://quarto.org/docs/download/tarball.html
+
+After that, can make edits to quarto_src and run `quarto render` in the `\quarto_src` directory. 
+

@@ -2,4 +2,9 @@
 
 Many of the assets and code are taken from https://github.com/plemaster01/PythonPiano
 
-Note that this does not work for wsl (windows), so had to use powershell there
+## How to develop for the launchpad
+Set up the following:
+https://github.com/thestk/rtmidi
+https://github.com/giezu/LaunchkeyMiniMK3
+
+

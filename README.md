@@ -32,3 +32,6 @@ Install quarto, here are some instructions on installation on linux: https://qua
 
 After that, can make edits to quarto_src and run `quarto render` in the `\quarto_src` directory. 
 
+### Useful resources for development
+Talking about the benefits of ojs (observable javascript): https://blog.djnavarro.net/posts/2024-01-09_observable-js-art/
+

@@ -1,46 +1,37 @@
-# Using p5.sound in Vanilla JavaScript
-
-In this example, we'll use the p5.sound library to create a simple audio player that plays a sound when a button is clicked.
-
-First, make sure to include the p5.sound library in your HTML file. You can do this by adding the following script tag in the head section of your HTML file:
-
 ```{html}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.sound Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
+</head>
+<body>
+  <button id="playButton">Play Sound</button>
+
+  <script>
+    let sound;
+
+    function preload() {
+      soundFormats('mp3', 'ogg');
+      sound = loadSound('path_to_your_sound_file.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file
+    }
+
+    function setup() {
+      let playButton = document.getElementById('playButton');
+      playButton.addEventListener('click', playSound);
+    }
+
+    function playSound() {
+      if (sound.isPlaying()) {
+        sound.stop();
+      } else {
+        sound.play();
+      }
+    }
+  </script>
+</body>
+</html>
 ```
-
-Next, create a button in your HTML file with an id of "playButton". This button will be used to trigger the sound playback.
-
-```{html}
-<button id="playButton">Play Sound</button>
-```
-
-Now, let's write the JavaScript code to load and play the sound when the button is clicked:
-
-```javascript
-let sound;
-
-function preload() {
-  soundFormats('mp3', 'ogg');
-  sound = loadSound('path_to_your_sound_file.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file
-}
-
-function setup() {
-  let playButton = document.getElementById('playButton');
-  playButton.addEventListener('click', playSound);
-}
-
-function playSound() {
-  if (sound.isPlaying()) {
-    sound.stop();
-  } else {
-    sound.play();
-  }
-}
-```
-
-Replace `'path_to_your_sound_file.mp3'` with the actual path to your sound file.
-
-Now, when you click the "Play Sound" button, the sound will play. Clicking the button again will stop the sound if it's currently playing.
-
-That's it! You've successfully used p5.sound in vanilla JavaScript.

@@ -107,13 +107,13 @@
   {
     "objectID": "projects/chaos_sampler.html",
     "href": "projects/chaos_sampler.html",
-    "title": "Using p5.sound in Vanilla JavaScript",
+    "title": "CSSS 2024",
     "section": "",
-    "text": "In this example, we’ll use the p5.sound library to create a simple audio player that plays a sound when a button is clicked.\nFirst, make sure to include the p5.sound library in your HTML file. You can do this by adding the following script tag in the head section of your HTML file:\n&lt;script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js\"&gt;&lt;/script&gt;\n&lt;script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js\"&gt;&lt;/script&gt;\nNext, create a button in your HTML file with an id of “playButton”. This button will be used to trigger the sound playback.\n&lt;button id=\"playButton\"&gt;Play Sound&lt;/button&gt;\nNow, let’s write the JavaScript code to load and play the sound when the button is clicked:\nlet sound;\n\nfunction preload() {\n  soundFormats('mp3', 'ogg');\n  sound = loadSound('path_to_your_sound_file.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file\n}\n\nfunction setup() {\n  let playButton = document.getElementById('playButton');\n  playButton.addEventListener('click', playSound);\n}\n\nfunction playSound() {\n  if (sound.isPlaying()) {\n    sound.stop();\n  } else {\n    sound.play();\n  }\n}\nReplace 'path_to_your_sound_file.mp3' with the actual path to your sound file.\nNow, when you click the “Play Sound” button, the sound will play. Clicking the button again will stop the sound if it’s currently playing.\nThat’s it! You’ve successfully used p5.sound in vanilla JavaScript.",
+    "text": "&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n  &lt;title&gt;p5.sound Example&lt;/title&gt;\n  &lt;script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js\"&gt;&lt;/script&gt;\n  &lt;script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js\"&gt;&lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;button id=\"playButton\"&gt;Play Sound&lt;/button&gt;\n\n  &lt;script&gt;\n    let sound;\n\n    function preload() {\n      soundFormats('mp3', 'ogg');\n      sound = loadSound('path_to_your_sound_file.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file\n    }\n\n    function setup() {\n      let playButton = document.getElementById('playButton');\n      playButton.addEventListener('click', playSound);\n    }\n\n    function playSound() {\n      if (sound.isPlaying()) {\n        sound.stop();\n      } else {\n        sound.play();\n      }\n    }\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
     "crumbs": [
       "Home",
       "Projects",
-      "Using p5.sound in Vanilla JavaScript"
+      "chaos_sampler.html"
     ]
   },
   {

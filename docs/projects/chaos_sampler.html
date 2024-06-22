@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CSSS 2024</title>
+<title>CSSS 2024 - Chaos sampler</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../projects/chaos_sampler.html">Projects</a></li><li class="breadcrumb-item"><a href="../projects/chaos_sampler.html">chaos_sampler.html</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../projects/chaos_sampler.html">Projects</a></li><li class="breadcrumb-item"><a href="../projects/chaos_sampler.html">Chaos sampler</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -151,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../projects/chaos_sampler.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">chaos_sampler.html</span></a>
+ <span class="menu-text">Chaos sampler</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -191,44 +191,217 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
+<script src="https://cdn.rawgit.com/mudcube/MIDI.js/master/inc/shim/Base64.js"></script>
 
 
-
-<pre class="{html}"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;p5.sound Example&lt;/title&gt;
-  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"&gt;&lt;/script&gt;
-  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;button id="playButton"&gt;Play Sound&lt;/button&gt;
-
-  &lt;script&gt;
-    let sound;
-
-    function preload() {
-      soundFormats('mp3', 'ogg');
-      sound = loadSound('path_to_your_sound_file.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file
+<script>
+  // Constants
+  const powerOffTime = 1000; // in milliseconds
+  const cellColor = 9;
+  const playColor = 22;
+  const pauseColor = 5;
+  const pauseRow = 6;
+  const pauseCol = 8;
+  const novationLogoColour = 37;
+  const buttonOnColour = 21;
+  const buttonLights = [
+    [21, 45, 49, 0, 0, 0, 1, 57],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [41, 42, 43, 45, 46, 0, 0, 0],
+    [5, 6, 21, 45, 13, 60, 0, 31],
+  ];
+  // Board state
+  let boardState = [];
+  let numRows = 8;
+  let numCols = 8;
+  for (let i = 0; i < numCols; i++) {
+    boardState[i] = [];
+    for (let j = 0; j < numRows; j++) {
+      boardState[i][j] = 0;
     }
+  }
+  // Run state
+  let updating = false;
+  // Check for MIDI support in the bnumRowser
+  if (navigator.requestMIDIAccess) {
+    navigator.requestMIDIAccess( { sysex: true } ).then(onMIDISuccess, onMIDIFailure);
+  } else {
+    console.error('Web MIDI API not supported in this bnumRowser.');
+  }
 
-    function setup() {
-      let playButton = document.getElementById('playButton');
-      playButton.addEventListener('click', playSound);
-    }
+  function onMIDISuccess(midiAccess) {
+    console.log('MIDI Access Object:', midiAccess);
+    midiAccess.inputs.forEach(input => {
+      input.onmidimessage = getMIDIMessage;
+    });
+  }
 
-    function playSound() {
-      if (sound.isPlaying()) {
-        sound.stop();
-      } else {
-        sound.play();
+  function onMIDIFailure() {
+    console.error('Failed to get MIDI access - No MIDI devices.');
+  }
+  function note_to_row_col_array(note){
+    return [8 - Math.floor(note / 10), (note % 10) - 1]
+  }
+  function row_col_to_note(row, col){
+    return (8 - row) * 10 + (col + 1);
+  }
+  function getMIDIMessage(midiMessage) {
+    const command = midiMessage.data[0];
+    const note = midiMessage.data[1];
+    const velocity = midiMessage.data.length > 2 ? midiMessage.data[2] : 0;
+    const [row, col] = note_to_row_col_array(note);
+    if (velocity === 127) {
+      console.log(`Row: ${row}, Column: ${col}`);
+      lightUp(row, col, cellColor, 0);
+      // Main buttons
+      if(row < 8 && col < 8){
+        // Swap the board state when pressed
+        if(boardState[row][col] == 0){
+          boardState[row][col] = 1;
+          lightUp(row, col, cellColor, 0); // Give instant feedback
+        }else{
+          boardState[row][col] = 0;
+          lightUp(row, col, 0, 0); // Give instant feedback
+        }
+      }
+      // Play/pause button
+      if(row == pauseRow && col == pauseCol){
+        if(updating){
+          updating = false;
+          lightUp(row, col, pauseColor, 0); // Give instant feedback
+        }else{
+          updating = true;
+          lightUp(row, col, playColor, 0); // Give instant feedback
+        }
       }
     }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+  }
+  // Define the sysex function to send a System Exclusive (sysex) message
+  async function sysex(...bytes) {
+    const midiAccess = await navigator.requestMIDIAccess({ sysex: true });
+
+    // Get the first available MIDI output
+    const outputs = Array.from(midiAccess.outputs.values());
+    if (outputs.length === 0) {
+      console.error('No MIDI outputs available.');
+      return;
+    }
+    const output = outputs[0];
+
+    const sysexMessage = [240, 0, 32, 41, 2, 13, ...bytes, 247];
+
+    output.send(sysexMessage);
+  }
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  function lightUp(row, col, color, mode) {
+    const note = row_col_to_note(row, col);
+    if (mode == 1) {
+      sysex(3, mode, note, color, color + 3);
+    } else {
+      sysex(3, mode, note, color);
+    }
+  }
+  // Start-up commands
+  (async () => {
+    sysex(14, 1) // Enable programmer mode
+    clearBoard();
+    renderBoardState();
+    while(true){
+      await sleep(100);
+      if(updating){
+        updateBoardState();
+      }
+      renderBoardState();
+    }
+  })();
+  function clearBoard(){
+    sysex(1, 0, 0); // Clear lights
+  }
+  // Helper function to get the state of a cell with periodic boundary conditions
+  function getCellState(row, col) {
+    const wrappedRow = (row + numRows) % numRows;
+    const wrappedCol = (col + numCols) % numCols;
+    return boardState[wrappedRow][wrappedCol];
+  }
+
+  function updateBoardState(){
+    const nextBoardState = boardState.map(arr => arr.slice()); // Create deep copy of the board state
+    // Loop through each cell in the board
+    for (let row = 0; row < numRows; row++) {
+      for (let col = 0; col < numCols; col++) {
+        let liveNeighbors = 0;
+
+        // Count live neighbors
+        for (let i = -1; i <= 1; i++) {
+          for (let j = -1; j <= 1; j++) {
+            if (i !== 0 || j !== 0) { // Exclude the cell itself
+              liveNeighbors += getCellState(row + i, col + j);
+            }
+          }
+        }
+
+        // Apply the rules of the Game of Life
+        if (boardState[row][col] === 1) {
+          // Any live cell with fewer than two or more than three live neighbors dies
+          if (liveNeighbors < 2 || liveNeighbors > 3) {
+            nextBoardState[row][col] = 0;
+          }
+        } else {
+          // Any dead cell with exactly three live neighbors becomes a live cell
+          if (liveNeighbors === 3) {
+            nextBoardState[row][col] = 1;
+          }
+        }
+      }
+    }
+    boardState = nextBoardState; // Update
+  }
+  function renderBoardState(){
+    clearBoard();
+    for (let i = 0; i < numCols; i++) {
+      for (let j = 0; j < numRows; j++) {
+        if(boardState[i][j] == 1){
+          lightUp(i,j, cellColor, 0);
+        }
+      }
+    }
+    if(updating){
+      lightUp(pauseRow,pauseCol, playColor, 0);
+    }else{
+      lightUp(pauseRow,pauseCol, pauseColor, 0);
+    }
+  }
+
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../projects/chaos_sampler.html">Projects</a></li><li class="breadcrumb-item"><a href="../projects/chaos_sampler.html">Chaos sampler</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Chaos sampler</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Using chaos to resample music.</p>
 
 
 

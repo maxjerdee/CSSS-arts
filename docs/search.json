@@ -107,13 +107,13 @@
   {
     "objectID": "projects/chaos_sampler.html",
     "href": "projects/chaos_sampler.html",
-    "title": "CSSS 2024",
+    "title": "Chaos sampler",
     "section": "",
-    "text": "&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n  &lt;title&gt;p5.sound Example&lt;/title&gt;\n  &lt;script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js\"&gt;&lt;/script&gt;\n  &lt;script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js\"&gt;&lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;button id=\"playButton\"&gt;Play Sound&lt;/button&gt;\n\n  &lt;script&gt;\n    let sound;\n\n    function preload() {\n      soundFormats('mp3', 'ogg');\n      sound = loadSound('path_to_your_sound_file.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file\n    }\n\n    function setup() {\n      let playButton = document.getElementById('playButton');\n      playButton.addEventListener('click', playSound);\n    }\n\n    function playSound() {\n      if (sound.isPlaying()) {\n        sound.stop();\n      } else {\n        sound.play();\n      }\n    }\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "text": "Using chaos to resample music.",
     "crumbs": [
       "Home",
       "Projects",
-      "chaos_sampler.html"
+      "Chaos sampler"
     ]
   },
   {

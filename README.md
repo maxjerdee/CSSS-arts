@@ -14,8 +14,8 @@ https://xavibou.com/ornithographies/
 
 ## Beatpad chaos
 Implementation of the game of life (and other cellular automata rules): https://www.youtube.com/watch?v=rWq4AppMm8A
-For controlling with c++
-https://github.com/giezu/LaunchkeyMiniMK3
+For controlling with javascript
+https://github.com/rienheuver/launchpad-mini-mk3/tree/master
 
 ## Collective paintings
 Get a bunch of canvases and paint with boundary conditions

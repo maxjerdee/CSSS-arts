@@ -1,6 +1,8 @@
 # CSSS-arts
 Code for playing around at CSSS 2024. 
 
+Hosted at https://maxjerdee.github.io/CSSS-arts/
+
 We plan to produce a website for hosting pretty demonstrations (and possibly explanations) of complexity in theory and practice. 
 
 ## Potential projects

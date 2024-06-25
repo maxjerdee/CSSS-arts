@@ -1,33 +1,92 @@
 ---
 title: "Chaos sampler"
+
 include-before-body:
   text: |
+    <style>
+      #grid {
+        display: grid;
+        grid-template-columns: repeat(9, 40px);
+        grid-gap: 5px;
+        margin: 20px auto;
+        width: 350px;
+      }
+      .cell {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #000;
+        background-color: #fff;
+        cursor: pointer;
+      }
+      .boundary {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #000;
+        background-color: #fff;
+        cursor: pointer;
+      }
+      .alive {
+        background-color: #F9B25A;
+      }
+      .pause {
+        background-color: #F55F5E;
+      }
+      .play {
+        background-color: #79FF56;
+      }
+    </style>
+
+    <div id="grid"></div>
+
     <!-- Library inputs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
     <script src="https://cdn.rawgit.com/mudcube/MIDI.js/master/inc/shim/Base64.js"></script>
-    
 
     <script>
       // Constants
+      const scaleLabels = [["C3","D3","E3","F3","G3","A3","B3","C4"]];
+      const minInterval = 50; // in milliseconds
+      const maxInterval = 1000; // in milliseconds
+      const intervalScaleFactor = 1.2; // Amount by which to scale the interval when adjusting the speed
       const powerOffTime = 1000; // in milliseconds
-      const cellColor = 9;
+      const aliveColor = 9;
       const playColor = 22;
       const pauseColor = 5;
-      const pauseRow = 6;
-      const pauseCol = 8;
+      const [pauseRow, pauseCol] = [6, 8]; // Coords for the pause/play button
+      const [clearRow, clearCol] = [7, 8]; // Coords for the clear screen button
+      const [speedUpRow, speedUpCol] = [-1, 0]; // Coords for the speed up button
+      const [speedDownRow, speedDownCol] = [-1, 1]; // Coords for the speed down button
+      const [scaleLeftRow, scaleLeftCol] = [-1, 0]; // Coords for the speed up button
+      const [scaleRightRow, scaleRightCol] = [-1, 1]; // Coords for the speed down button
       const novationLogoColour = 37;
       const buttonOnColour = 21;
-      const buttonLights = [
-        [21, 45, 49, 0, 0, 0, 1, 57],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [41, 42, 43, 45, 46, 0, 0, 0],
-        [5, 6, 21, 45, 13, 60, 0, 31],
-      ];
+
+      // Variables
+      let interval = 100; // Amount to wait between updates in milliseconds
+      let scaleNum = 0; // Where on the circle of fifths we are 0 is C, 1 is G, etc.. up to 11 is F and wrap around
+
+      let scales = [];
+      function preload() {
+        for(let scaleNum = 0; scaleNum < 12; scaleNum++){
+          scales[scaleNum] = [];
+          for(let noteNum = 0; noteNum < 8; noteNum++){
+            // scales[scaleNum][noteNum] = loadSound(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav')); // Note that the compiled html lives in docs/projects
+            // console.log(concat('notes/', scaleLabels[0][noteNum], '.wav'));
+            // scales[scaleNum][noteNum] = loadSound('notes/C3.wav'); // Note that the compiled html lives in docs/projects
+            scales[scaleNum][noteNum] = new Audio(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav'));
+          }
+        }
+      }
+      function mousePressed() {
+        userStartAudio();
+      }
+
+      function setup() {
+        outputVolume(0.1);
+        // scales[0][0].play();
+      }
+
       // Board state
       let boardState = [];
       let numRows = 8;
@@ -38,6 +97,32 @@ include-before-body:
           boardState[i][j] = 0;
         }
       }
+
+      // Function to create the grid of buttons
+      function createGrid() {
+        const grid = document.getElementById('grid');
+        grid.innerHTML = ''; // Clear existing grid
+
+        for (let row = 0; row < numRows + 1; row++) {
+          for (let col = 0; col < numCols + 1; col++) {
+            const button = document.createElement('button');
+            if(row == 0 || col == numCols){
+              button.classList.add('boundary');
+            }else{
+              button.classList.add('cell');
+            }
+            // Convert to the row and column as represented on the novation
+            let novationRow = row - 1;
+            let novationCol = col;
+            button.dataset.row = novationRow;
+            button.dataset.col = novationCol;
+            button.addEventListener('click', () => onClick(novationRow, novationCol));
+            grid.appendChild(button);
+          }
+        }
+        // renderGrid();
+      }
+
       // Run state
       let updating = false;
       // Check for MIDI support in the bnumRowser
@@ -57,41 +142,64 @@ include-before-body:
       function onMIDIFailure() {
         console.error('Failed to get MIDI access - No MIDI devices.');
       }
-      function note_to_row_col_array(note){
-        return [8 - Math.floor(note / 10), (note % 10) - 1]
-      }
-      function row_col_to_note(row, col){
-        return (8 - row) * 10 + (col + 1);
+      function onClick(row, col){
+        // Main buttons
+        if(row >= 0 && row < 8 && col < 8){
+          // Swap the board state when pressed
+          if(boardState[row][col] == 0){
+            boardState[row][col] = 1;
+            lightUp(row, col, aliveColor); // Give instant feedback
+          }else{
+            boardState[row][col] = 0;
+            lightUp(row, col, 0); // Give instant feedback
+          }
+        }
+        // Play/pause button
+        if(row == pauseRow && col == pauseCol){
+          if(updating){
+            updating = false;
+            lightUp(row, col, pauseColor); // Give instant feedback
+          }else{
+            updating = true;
+            lightUp(row, col, playColor); // Give instant feedback
+          }
+        }
+        // Clear board button
+        if(row == clearRow && col == clearCol){
+          lightUp(row, col, pauseColor); // Give instant feedback
+          for (let i = 0; i < numCols; i++) {
+            boardState[i] = [];
+            for (let j = 0; j < numRows; j++) {
+              boardState[i][j] = 0;
+            }
+          }
+          clearBoard();
+        }
+        // Speed up button
+        if(row == speedUpRow && col == speedUpCol){
+          lightUp(row, col, aliveColor); // Give instant feedback
+          if(interval > minInterval){
+            interval /= intervalScaleFactor;
+          }
+        }
+        // Slow down button
+        if(row == speedDownRow && col == speedDownCol){
+          lightUp(row, col, aliveColor); // Give instant feedback
+          if(interval < maxInterval){
+            interval *= intervalScaleFactor;
+          }
+        }
       }
       function getMIDIMessage(midiMessage) {
         const command = midiMessage.data[0];
         const note = midiMessage.data[1];
         const velocity = midiMessage.data.length > 2 ? midiMessage.data[2] : 0;
+
         const [row, col] = note_to_row_col_array(note);
+        console.log(`Command: ${command}, Row: ${row}, Col: ${col}, Velocity: ${velocity}`);
         if (velocity === 127) {
           console.log(`Row: ${row}, Column: ${col}`);
-          lightUp(row, col, cellColor, 0);
-          // Main buttons
-          if(row < 8 && col < 8){
-            // Swap the board state when pressed
-            if(boardState[row][col] == 0){
-              boardState[row][col] = 1;
-              lightUp(row, col, cellColor, 0); // Give instant feedback
-            }else{
-              boardState[row][col] = 0;
-              lightUp(row, col, 0, 0); // Give instant feedback
-            }
-          }
-          // Play/pause button
-          if(row == pauseRow && col == pauseCol){
-            if(updating){
-              updating = false;
-              lightUp(row, col, pauseColor, 0); // Give instant feedback
-            }else{
-              updating = true;
-              lightUp(row, col, playColor, 0); // Give instant feedback
-            }
-          }
+          onClick(row, col);
         }
       }
       // Define the sysex function to send a System Exclusive (sysex) message
@@ -101,7 +209,7 @@ include-before-body:
         // Get the first available MIDI output
         const outputs = Array.from(midiAccess.outputs.values());
         if (outputs.length === 0) {
-          console.error('No MIDI outputs available.');
+          // console.error('No MIDI outputs available.');
           return;
         }
         const output = outputs[0];
@@ -113,21 +221,31 @@ include-before-body:
       function sleep(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
       }
-      function lightUp(row, col, color, mode) {
+      function lightUp(row, col, color) {
+        // Send message to the novation
         const note = row_col_to_note(row, col);
-        if (mode == 1) {
-          sysex(3, mode, note, color, color + 3);
-        } else {
-          sysex(3, mode, note, color);
+        sysex(3, 0, note, color);
+        // Light up the button
+        const cell = document.querySelector(`button[data-row="${row}"][data-col="${col}"]`);
+        if(color == aliveColor){
+          cell.classList.add('alive');
+        }
+        if(color == pauseColor){
+          cell.classList.add('pause');
+        }
+        if(color == playColor){
+          cell.classList.add('play');
         }
       }
       // Start-up commands
       (async () => {
         sysex(14, 1) // Enable programmer mode
+        // loadSound('assets/doorbell.mp3');
         clearBoard();
+        createGrid();
         renderBoardState();
         while(true){
-          await sleep(100);
+          await sleep(interval);
           if(updating){
             updateBoardState();
           }
@@ -136,6 +254,25 @@ include-before-body:
       })();
       function clearBoard(){
         sysex(1, 0, 0); // Clear lights
+        // Button clear
+        for (let row = -1; row < numRows; row++) {
+          for (let col = 0; col < numCols + 1; col++) {
+            const cell = document.querySelector(`button[data-row="${row}"][data-col="${col}"]`);
+            if(cell){
+              cell.classList.remove('alive');
+              cell.classList.remove('play');
+              cell.classList.remove('pause');
+            }
+          }
+        }
+      }
+      
+      // Game of life logic
+      function note_to_row_col_array(note){
+        return [8 - Math.floor(note / 10), (note % 10) - 1]
+      }
+      function row_col_to_note(row, col){
+        return (8 - row) * 10 + (col + 1);
       }
       // Helper function to get the state of a cell with periodic boundary conditions
       function getCellState(row, col) {
@@ -143,7 +280,6 @@ include-before-body:
         const wrappedCol = (col + numCols) % numCols;
         return boardState[wrappedRow][wrappedCol];
       }
-      
       function updateBoardState(){
         const nextBoardState = boardState.map(arr => arr.slice()); // Create deep copy of the board state
         // Loop through each cell in the board
@@ -165,11 +301,25 @@ include-before-body:
               // Any live cell with fewer than two or more than three live neighbors dies
               if (liveNeighbors < 2 || liveNeighbors > 3) {
                 nextBoardState[row][col] = 0;
+                // Stop sound if this is new
+                if(boardState[row][col] == 1){
+                  // scales[scaleNum][row].stop();
+                  scales[scaleNum][row].pause();
+                  scales[scaleNum][row].currentTime = 0;
+                }
               }
             } else {
               // Any dead cell with exactly three live neighbors becomes a live cell
               if (liveNeighbors === 3) {
                 nextBoardState[row][col] = 1;
+                // Play sound if this is new
+                if(boardState[row][col] == 0){
+                  // scales[scaleNum][row].play(duration=0.1);
+                  scales[scaleNum][row].play();
+                  // scales[scaleNum][row].cloneNode(true).play();
+                  // let s = new Audio('notes/C3.wav');
+                  // s.play();
+                }
               }
             }
           }
@@ -181,14 +331,14 @@ include-before-body:
         for (let i = 0; i < numCols; i++) {
           for (let j = 0; j < numRows; j++) {
             if(boardState[i][j] == 1){
-              lightUp(i,j, cellColor, 0);
+              lightUp(i,j, aliveColor);
             }
           }
         }
         if(updating){
-          lightUp(pauseRow,pauseCol, playColor, 0);
+          lightUp(pauseRow,pauseCol, playColor);
         }else{
-          lightUp(pauseRow,pauseCol, pauseColor, 0);
+          lightUp(pauseRow,pauseCol, pauseColor);
         }
       }
     

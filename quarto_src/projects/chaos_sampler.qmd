@@ -45,6 +45,9 @@ include-before-body:
 
     <script>
       // Constants
+      // const USE_P5_SOUND = true; // Use the p5 sound package (having issues with turning into noise)
+      const USE_P5_SOUND = false; // Use the built in js Audio
+
       const scaleLabels = [["C3","D3","E3","F3","G3","A3","B3","C4"]];
       const minInterval = 50; // in milliseconds
       const maxInterval = 1000; // in milliseconds
@@ -71,10 +74,13 @@ include-before-body:
         for(let scaleNum = 0; scaleNum < 12; scaleNum++){
           scales[scaleNum] = [];
           for(let noteNum = 0; noteNum < 8; noteNum++){
-            scales[scaleNum][noteNum] = loadSound(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav')); // Note that the compiled html lives in docs/projects
+            if(USE_P5_SOUND){
+              scales[scaleNum][noteNum] = loadSound(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav')); // Note that the compiled html lives in docs/projects
+            }else{
+              scales[scaleNum][noteNum] = new Audio(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav'));
+            }
             // console.log(concat('notes/', scaleLabels[0][noteNum], '.wav'));
             // scales[scaleNum][noteNum] = loadSound('notes/C3.wav'); // Note that the compiled html lives in docs/projects
-            // scales[scaleNum][noteNum] = new Audio(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav'));
           }
         }
       }
@@ -302,9 +308,12 @@ include-before-body:
                 nextBoardState[row][col] = 0;
                 // Stop sound if this is new
                 if(boardState[row][col] == 1){
-                  scales[scaleNum][row].stop();
-                  // scales[scaleNum][row].pause();
-                  // scales[scaleNum][row].currentTime = 0;
+                  if(USE_P5_SOUND){
+                    scales[scaleNum][row].stop();
+                  }else{
+                    scales[scaleNum][row].pause();
+                    scales[scaleNum][row].currentTime = 0;
+                  }
                 }
               }
             } else {

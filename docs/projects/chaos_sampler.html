@@ -258,10 +258,10 @@ ul.task-list li input[type="checkbox"] {
     for(let scaleNum = 0; scaleNum < 12; scaleNum++){
       scales[scaleNum] = [];
       for(let noteNum = 0; noteNum < 8; noteNum++){
-        // scales[scaleNum][noteNum] = loadSound(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav')); // Note that the compiled html lives in docs/projects
+        scales[scaleNum][noteNum] = loadSound(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav')); // Note that the compiled html lives in docs/projects
         // console.log(concat('notes/', scaleLabels[0][noteNum], '.wav'));
         // scales[scaleNum][noteNum] = loadSound('notes/C3.wav'); // Note that the compiled html lives in docs/projects
-        scales[scaleNum][noteNum] = new Audio(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav'));
+        // scales[scaleNum][noteNum] = new Audio(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav'));
       }
     }
   }
@@ -489,9 +489,9 @@ ul.task-list li input[type="checkbox"] {
             nextBoardState[row][col] = 0;
             // Stop sound if this is new
             if(boardState[row][col] == 1){
-              // scales[scaleNum][row].stop();
-              scales[scaleNum][row].pause();
-              scales[scaleNum][row].currentTime = 0;
+              scales[scaleNum][row].stop();
+              // scales[scaleNum][row].pause();
+              // scales[scaleNum][row].currentTime = 0;
             }
           }
         } else {

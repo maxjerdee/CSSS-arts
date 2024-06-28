@@ -213,7 +213,6 @@ include-before-body:
           // ctx.strokeStyle = "#2222";
           
           ctx.lineWidth = 4;
-          console.log(boid.history.length);
           for (let i = 0; i < boid.history.length - 1; i++) {
             if(i % OPACITY_STROKE_GROUPS == 0){
               ctx.beginPath();

@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
   const buttonOnColour = 21;
 
   // Variables
-  let interval = 100; // Amount to wait between updates in milliseconds
+  let interval = 250; // Amount to wait between updates in milliseconds
   let scaleNum = 0; // Where on the circle of fifths we are 0 is C, 1 is G, etc.. up to 11 is F and wrap around
 
   let scales = [];
@@ -402,7 +402,6 @@ ul.task-list li input[type="checkbox"] {
     const output = outputs[0];
 
     const sysexMessage = [240, 0, 32, 41, 2, 13, ...bytes, 247];
-
     output.send(sysexMessage);
   }
   function sleep(ms) {

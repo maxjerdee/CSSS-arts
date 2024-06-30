@@ -48,7 +48,22 @@ include-before-body:
       // const USE_P5_SOUND = true; // Use the p5 sound package (having issues with turning into noise)
       const USE_P5_SOUND = false; // Use the built in js Audio
 
-      const scaleLabels = [["C3","D3","E3","F3","G3","A3","B3","C4"]];
+      // Scales along the circle of fifths
+
+      const noteNames = ["C2", "Db2", "D2", "Eb2", "E2", "F2", "Gb2", "G2", "Ab2", "A2", "Bb2", "B2", "C3", "Db3", "D3", "Eb3", "E3", "F3", "Gb3", "G3", "Ab3", "A3", "Bb3", "B3", "C4", "Db4", "D4", "Eb4", "E4", "F4", "Gb4", "G4", "Ab4", "A4", "Bb4", "B4", "C5", "Db5", "D5", "Eb5", "E5", "F5", "Gb5", "G5", "Ab5", "A5", "Bb5", "B5", "C6", "Db6", "D6", "Eb6", "E6", "F6", "Gb6", "G6", "Ab6", "A6", "Bb6", "B6", "C7", "Db7", "D7", "Eb7", "E7", "F7", "Gb7", "G7", "Ab7", "A7", "Bb7", "B7"];
+
+      // Offset in half-steps from C for the circle of fifths
+      const circleOfFifthsBaseNumbers = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5];
+
+      // Amount of halfsteps (12 is an octave)
+      const rowOffsets = [36,36,24,24,12,12,0,0];
+
+      const scaleTypes = [[0,2,4,5,7,9,11,12], // Major
+      [0,2,4,7,9,12,14,16], // Pentatonic Jeremy
+      [0,3,5,6,7,10,12,15] // Blues
+      ] 
+
+      const scaleNames = ["C","G","D","A","E","B","F#","Db","Ab","Eb","Bb","F"];
       const minInterval = 50; // in milliseconds
       const maxInterval = 1000; // in milliseconds
       const intervalScaleFactor = 1.2; // Amount by which to scale the interval when adjusting the speed
@@ -56,34 +71,33 @@ include-before-body:
       const aliveColor = 9;
       const playColor = 22;
       const pauseColor = 5;
+      const offColor = 0;
       const [pauseRow, pauseCol] = [6, 8]; // Coords for the pause/play button
       const [clearRow, clearCol] = [7, 8]; // Coords for the clear screen button
       const [speedUpRow, speedUpCol] = [-1, 0]; // Coords for the speed up button
       const [speedDownRow, speedDownCol] = [-1, 1]; // Coords for the speed down button
-      const [scaleLeftRow, scaleLeftCol] = [-1, 0]; // Coords for the speed up button
-      const [scaleRightRow, scaleRightCol] = [-1, 1]; // Coords for the speed down button
+      const [scaleLeftRow, scaleLeftCol] = [-1, 2]; // Coords for the scale left button
+      const [scaleRightRow, scaleRightCol] = [-1, 3]; // Coords for the scale right button
       const novationLogoColour = 37;
       const buttonOnColour = 21;
 
       // Variables
       let interval = 250; // Amount to wait between updates in milliseconds
+      let last_tempo_change = 0; // Reference point to use to ensure a steady rhythm, update on tempo change
       let scaleNum = 0; // Where on the circle of fifths we are 0 is C, 1 is G, etc.. up to 11 is F and wrap around
+      let scaleType = 1; // Which of the scale types to use
 
-      let scales = [];
+      let notes = [];
       function preload() {
-        for(let scaleNum = 0; scaleNum < 12; scaleNum++){
-          scales[scaleNum] = [];
-          for(let noteNum = 0; noteNum < 8; noteNum++){
-            if(USE_P5_SOUND){
-              scales[scaleNum][noteNum] = loadSound(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav')); // Note that the compiled html lives in docs/projects
-            }else{
-              scales[scaleNum][noteNum] = new Audio(concat(concat('notes/', scaleLabels[0][noteNum]), '.wav'));
-            }
-            // console.log(concat('notes/', scaleLabels[0][noteNum], '.wav'));
-            // scales[scaleNum][noteNum] = loadSound('notes/C3.wav'); // Note that the compiled html lives in docs/projects
+        for(let noteNum = 0; noteNum < noteNames.length; noteNum++){
+          if(USE_P5_SOUND){
+            notes[noteNum] = loadSound(concat(concat('notes/', noteNames[noteNum]), '.wav')); // Note that the compiled html lives in docs/projects
+          }else{
+            notes[noteNum] = new Audio(concat(concat('notes/', noteNames[noteNum]), '.wav'));
           }
         }
       }
+
       function mousePressed() {
         userStartAudio();
       }
@@ -104,6 +118,12 @@ include-before-body:
         }
       }
 
+      let gridNotes = []; // 2D array to hold the sounds assocatied with each of the 64 buttons
+      // This will enable us to stop and start them independently
+      for(let i = 0; i < numCols; i++){
+        gridNotes[i] = [];
+      }
+
       // Function to create the grid of buttons
       function createGrid() {
         const grid = document.getElementById('grid');
@@ -122,7 +142,7 @@ include-before-body:
             let novationCol = col;
             button.dataset.row = novationRow;
             button.dataset.col = novationCol;
-            button.addEventListener('click', () => onClick(novationRow, novationCol));
+            button.addEventListener('click', () => onClick(novationRow, novationCol, mouseClick=true));
             grid.appendChild(button);
           }
         }
@@ -148,13 +168,28 @@ include-before-body:
       function onMIDIFailure() {
         console.error('Failed to get MIDI access - No MIDI devices.');
       }
-      function onClick(row, col){
+      // Return the note associated with that button (given the current scaleNum and type)
+      function getNote(row, col){
+        let noteNum = 0;
+        noteNum += circleOfFifthsBaseNumbers[scaleNum]; // Offset to put us in the correct key
+        noteNum += scaleTypes[scaleType][col]; // Get the note from the column in the correct scale
+        noteNum += rowOffsets[row];
+        if(noteNum >= notes.length){
+          noteNum -= notes.length;
+        }
+        // console.log(`Row: ${row}, Column: ${col}, Note: ${noteNames[noteNum]}`)
+        return notes[noteNum];
+      }
+      function onClick(row, col, mouseClick=false){
         // Main buttons
         if(row >= 0 && row < 8 && col < 8){
           // Swap the board state when pressed
           if(boardState[row][col] == 0){
             boardState[row][col] = 1;
             lightUp(row, col, aliveColor); // Give instant feedback
+            // gridNotes[row][col] = getNote(row, col).cloneNode(true);
+            gridNotes[row][col] = getNote(row, col);
+            gridNotes[row][col].play();
           }else{
             boardState[row][col] = 0;
             lightUp(row, col, 0); // Give instant feedback
@@ -177,15 +212,17 @@ include-before-body:
             boardState[i] = [];
             for (let j = 0; j < numRows; j++) {
               boardState[i][j] = 0;
+              lightUp(i,j,offColor);
             }
           }
-          clearBoard();
         }
         // Speed up button
         if(row == speedUpRow && col == speedUpCol){
           lightUp(row, col, aliveColor); // Give instant feedback
           if(interval > minInterval){
             interval /= intervalScaleFactor;
+            last_tempo_change = performance.now();
+            console.log(`Interval: ${interval}`);
           }
         }
         // Slow down button
@@ -193,7 +230,41 @@ include-before-body:
           lightUp(row, col, aliveColor); // Give instant feedback
           if(interval < maxInterval){
             interval *= intervalScaleFactor;
+            last_tempo_change = performance.now();
+            console.log(`Interval: ${interval}`);
           }
+        }
+        // Scale left button
+        if(row == scaleLeftRow && col == scaleLeftCol){
+          lightUp(row, col, aliveColor); // Give instant feedback
+          scaleNum -= 1;
+          if(scaleNum < 0){
+            scaleNum += 12; // Loop around the circle
+          }
+          console.log(`Key: ${scaleNames[scaleNum]}`);
+        }
+        // Scale right button
+        if(row == scaleRightRow && col == scaleRightCol){
+          lightUp(row, col, aliveColor); // Give instant feedback
+          scaleNum += 1;
+          if(scaleNum >= 12){
+            scaleNum -= 12; // Loop around the circle
+          }
+          console.log(`Key: ${scaleNames[scaleNum]}`);
+        }
+        // Turn the button off after a fixed time
+        if(mouseClick){
+          if(row == clearRow && col == clearCol || row == speedDownRow && col == speedDownCol || row == speedUpRow && col == speedUpCol || row == scaleLeftRow && col == scaleLeftCol || row == scaleRightRow && col == scaleRightCol){
+            setTimeout(function() {
+                onRelease(row,col);
+            }, 100);
+          }
+        }
+      }
+      function onRelease(row, col) {
+        // Turn off light on release
+        if(row == clearRow && col == clearCol || row == speedDownRow && col == speedDownCol || row == speedUpRow && col == speedUpCol || row == scaleLeftRow && col == scaleLeftCol || row == scaleRightRow && col == scaleRightCol){
+          lightUp(row,col,offColor);
         }
       }
       function getMIDIMessage(midiMessage) {
@@ -202,10 +273,13 @@ include-before-body:
         const velocity = midiMessage.data.length > 2 ? midiMessage.data[2] : 0;
 
         const [row, col] = note_to_row_col_array(note);
-        console.log(`Command: ${command}, Row: ${row}, Col: ${col}, Velocity: ${velocity}`);
+        // console.log(`Command: ${command}, Row: ${row}, Col: ${col}, Velocity: ${velocity}`);
         if (velocity === 127) {
-          console.log(`Row: ${row}, Column: ${col}`);
+          // console.log(`Row: ${row}, Column: ${col}`);
           onClick(row, col);
+        }
+        if (velocity === 0){
+          onRelease(row, col);
         }
       }
       // Define the sysex function to send a System Exclusive (sysex) message
@@ -232,45 +306,41 @@ include-before-body:
         sysex(3, 0, note, color);
         // Light up the button
         const cell = document.querySelector(`button[data-row="${row}"][data-col="${col}"]`);
-        if(color == aliveColor){
-          cell.classList.add('alive');
-        }
-        if(color == pauseColor){
-          cell.classList.add('pause');
-        }
-        if(color == playColor){
-          cell.classList.add('play');
+        if(cell){
+          // Clear existing attributes
+          cell.classList.remove('alive');
+          cell.classList.remove('play');
+          cell.classList.remove('pause');
+          if(color == aliveColor){
+            cell.classList.add('alive');
+          }
+          if(color == pauseColor){
+            cell.classList.add('pause');
+          }
+          if(color == playColor){
+            cell.classList.add('play');
+          }
+          if(color == offColor){
+            // Pass
+          }
         }
       }
       // Start-up commands
       (async () => {
         sysex(14, 1) // Enable programmer mode
-        // loadSound('assets/doorbell.mp3');
-        clearBoard();
+        sysex(1, 0, 0); // Clear lights
         createGrid();
-        renderBoardState();
-        while(true){
-          await sleep(interval);
+        lightUp(pauseRow, pauseCol, pauseColor); // Give instant feedback
+        // renderBoardState();
+        while(true){ // Tell the browser to wait until the next 
+          let next_tick_start = Math.ceil((performance.now() + 20 - last_tempo_change)/interval)*interval + last_tempo_change;
+          await sleep(next_tick_start - performance.now());
           if(updating){
             updateBoardState();
           }
-          renderBoardState();
+          generalGraphicsUpdate();
         }
       })();
-      function clearBoard(){
-        sysex(1, 0, 0); // Clear lights
-        // Button clear
-        for (let row = -1; row < numRows; row++) {
-          for (let col = 0; col < numCols + 1; col++) {
-            const cell = document.querySelector(`button[data-row="${row}"][data-col="${col}"]`);
-            if(cell){
-              cell.classList.remove('alive');
-              cell.classList.remove('play');
-              cell.classList.remove('pause');
-            }
-          }
-        }
-      }
       
       // Game of life logic
       function note_to_row_col_array(note){
@@ -308,11 +378,19 @@ include-before-body:
                 nextBoardState[row][col] = 0;
                 // Stop sound if this is new
                 if(boardState[row][col] == 1){
+                  lightUp(row,col, 0);
                   if(USE_P5_SOUND){
-                    scales[scaleNum][row].stop();
+                    // getNote(row, col).stop();
+                    if(gridNotes[row][col]){
+                      gridNotes[row][col].stop();
+                    }
                   }else{
-                    scales[scaleNum][row].pause();
-                    scales[scaleNum][row].currentTime = 0;
+                    // getNote(row, col).pause();
+                    // getNote(row, col).currentTime = 0;
+                    if(gridNotes[row][col]){
+                      gridNotes[row][col].pause();
+                      gridNotes[row][col].currentTime = 0;
+                    }
                   }
                 }
               }
@@ -322,9 +400,12 @@ include-before-body:
                 nextBoardState[row][col] = 1;
                 // Play sound if this is new
                 if(boardState[row][col] == 0){
-                  // scales[scaleNum][row].play(duration=0.1);
-                  scales[scaleNum][row].play();
-                  // scales[scaleNum][row].cloneNode(true).play();
+                  lightUp(row,col, aliveColor);
+                  // scales[scaleNum][col].play(duration=0.1);
+                  // getNote(row, col).play();
+                  gridNotes[row][col] = getNote(row, col).cloneNode(true);
+                  gridNotes[row][col].play();
+                  // scales[scaleNum][col].cloneNode(true).play();
                   // let s = new Audio('notes/C3.wav');
                   // s.play();
                 }
@@ -334,15 +415,7 @@ include-before-body:
         }
         boardState = nextBoardState; // Update
       }
-      function renderBoardState(){
-        clearBoard();
-        for (let i = 0; i < numCols; i++) {
-          for (let j = 0; j < numRows; j++) {
-            if(boardState[i][j] == 1){
-              lightUp(i,j, aliveColor);
-            }
-          }
-        }
+      function generalGraphicsUpdate(){
         if(updating){
           lightUp(pauseRow,pauseCol, playColor);
         }else{

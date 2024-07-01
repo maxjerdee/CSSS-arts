@@ -22,8 +22,7 @@ website:
           - projects/chaos_sampler.qmd
           - projects/flocking.qmd
           - projects/gallery.qmd
-          - projects/guessing.qmd
-          - projects/p5test.qmd
+          - projects/game_of_life.qmd
 
 format:
   html:

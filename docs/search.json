@@ -109,7 +109,7 @@
     "href": "projects/chaos_sampler.html",
     "title": "Chaos sampler",
     "section": "",
-    "text": "Using chaos to resample music.",
+    "text": "Chopping up samples using chaos (the Lorentz attractor)\nPlay Sound",
     "crumbs": [
       "Home",
       "Projects",
@@ -121,13 +121,18 @@
     "href": "projects/phase_transition.html",
     "title": "Chaos sampler",
     "section": "",
-    "text": "This page demonstrates various uses of a beat pad (grid of buttons) to demonstrate the game of life, cellular automata, chaotic attractors, and the Ising/Potts models.\n\nP5 = require(\"p5\")\n\nfunction* createSketch(sketch) {\n  const element = DOM.element('div');\n  yield element;\n  const instance = new P5(sketch, element, true);\n  try {\n    while (true) {\n      yield element;\n    }\n  } finally {\n    instance.remove();\n  }\n}\n\ncreateSketch(s =&gt; {\n  let cols = 8;\n  let rows = 8;\n  let buttonSize = 50;\n  let buttons = [];\n\n  s.setup = function() {\n    s.createCanvas(cols * buttonSize, rows * buttonSize);\n    for (let i = 0; i &lt; cols; i++) {\n      buttons[i] = [];\n      for (let j = 0; j &lt; rows; j++) {\n        buttons[i][j] = new GridButton(i * buttonSize, j * buttonSize, buttonSize);\n      }\n    }\n  };\n\n  s.draw = function() {\n    s.background(255);\n    for (let i = 0; i &lt; cols; i++) {\n      for (let j = 0; j &lt; rows; j++) {\n        buttons[i][j].display();\n      }\n    }\n  };\n\n  s.mousePressed = function() {\n    for (let i = 0; i &lt; cols; i++) {\n      for (let j = 0; j &lt; rows; j++) {\n        buttons[i][j].checkClick();\n      }\n    }\n  };\n\n  class GridButton {\n    constructor(x, y, size) {\n      this.x = x;\n      this.y = y;\n      this.size = size;\n      this.color = s.color(255);\n    }\n\n    display() {\n      s.fill(this.color);\n      s.rect(this.x, this.y, this.size, this.size);\n    }\n\n    checkClick() {\n      if (s.mouseX &gt; this.x && s.mouseX &lt; this.x + this.size &&\n          s.mouseY &gt; this.y && s.mouseY &lt; this.y + this.size) {\n        this.color = s.color(s.random(255), s.random(255), s.random(255));\n      }\n    }\n  }\n});"
+    "text": "Chopping up samples using chaos (the Lorentz attractor)\nPlay Sound"
   },
   {
     "objectID": "projects/game_of_life.html",
     "href": "projects/game_of_life.html",
     "title": "Chaos sampler",
     "section": "",
-    "text": "This page demonstrates various uses of a beat pad (grid of buttons) to demonstrate the game of life, cellular automata, chaotic attractors, and the Ising/Potts models.\n\nP5 = require(\"p5\")\n\nfunction* createSketch(sketch) {\n  const element = DOM.element('div');\n  yield element;\n  const instance = new P5(sketch, element, true);\n  try {\n    while (true) {\n      yield element;\n    }\n  } finally {\n    instance.remove();\n  }\n}\n\ncreateSketch(s =&gt; {\n  let cols = 8;\n  let rows = 8;\n  let buttonSize = 50;\n  let buttons = [];\n\n  s.setup = function() {\n    s.createCanvas(cols * buttonSize, rows * buttonSize);\n    for (let i = 0; i &lt; cols; i++) {\n      buttons[i] = [];\n      for (let j = 0; j &lt; rows; j++) {\n        buttons[i][j] = new GridButton(i * buttonSize, j * buttonSize, buttonSize);\n      }\n    }\n  };\n\n  s.draw = function() {\n    s.background(255);\n    for (let i = 0; i &lt; cols; i++) {\n      for (let j = 0; j &lt; rows; j++) {\n        buttons[i][j].display();\n      }\n    }\n  };\n\n  s.mousePressed = function() {\n    for (let i = 0; i &lt; cols; i++) {\n      for (let j = 0; j &lt; rows; j++) {\n        buttons[i][j].checkClick();\n      }\n    }\n  };\n\n  class GridButton {\n    constructor(x, y, size) {\n      this.x = x;\n      this.y = y;\n      this.size = size;\n      this.color = s.color(255);\n    }\n\n    display() {\n      s.fill(this.color);\n      s.rect(this.x, this.y, this.size, this.size);\n    }\n\n    checkClick() {\n      if (s.mouseX &gt; this.x && s.mouseX &lt; this.x + this.size &&\n          s.mouseY &gt; this.y && s.mouseY &lt; this.y + this.size) {\n        this.color = s.color(s.random(255), s.random(255), s.random(255));\n      }\n    }\n  }\n});"
+    "text": "Using chaos to resample music.",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Chaos sampler"
+    ]
   }
 ]

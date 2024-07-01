@@ -1,79 +1,15 @@
 ---
 title: "Chaos sampler"
+format: html
 ---
 
-This page demonstrates various uses of a beat pad (grid of buttons) to demonstrate the game of life, cellular automata,
-chaotic attractors, and the Ising/Potts models. 
+Chopping up samples using chaos (the Lorentz attractor)
 
-```{ojs}
-//| echo: false
-P5 = require("p5")
-
-function* createSketch(sketch) {
-  const element = DOM.element('div');
-  yield element;
-  const instance = new P5(sketch, element, true);
-  try {
-    while (true) {
-      yield element;
-    }
-  } finally {
-    instance.remove();
-  }
-}
-
-createSketch(s => {
-  let cols = 8;
-  let rows = 8;
-  let buttonSize = 50;
-  let buttons = [];
-
-  s.setup = function() {
-    s.createCanvas(cols * buttonSize, rows * buttonSize);
-    for (let i = 0; i < cols; i++) {
-      buttons[i] = [];
-      for (let j = 0; j < rows; j++) {
-        buttons[i][j] = new GridButton(i * buttonSize, j * buttonSize, buttonSize);
-      }
-    }
-  };
-
-  s.draw = function() {
-    s.background(255);
-    for (let i = 0; i < cols; i++) {
-      for (let j = 0; j < rows; j++) {
-        buttons[i][j].display();
-      }
-    }
-  };
-
-  s.mousePressed = function() {
-    for (let i = 0; i < cols; i++) {
-      for (let j = 0; j < rows; j++) {
-        buttons[i][j].checkClick();
-      }
-    }
-  };
-
-  class GridButton {
-    constructor(x, y, size) {
-      this.x = x;
-      this.y = y;
-      this.size = size;
-      this.color = s.color(255);
-    }
-
-    display() {
-      s.fill(this.color);
-      s.rect(this.x, this.y, this.size, this.size);
-    }
-
-    checkClick() {
-      if (s.mouseX > this.x && s.mouseX < this.x + this.size &&
-          s.mouseY > this.y && s.mouseY < this.y + this.size) {
-        this.color = s.color(s.random(255), s.random(255), s.random(255));
-      }
-    }
-  }
-});
+```{=html}
+<button id="playButton">Play Sound</button>
+<div id="recordContainer">
+    <img id="record" src="images/amen-record.png" alt="Record">
+</div>
+<link rel="stylesheet" href="chaos_styles.css">
+<script src="chaos_script.js"></script> 
 ```

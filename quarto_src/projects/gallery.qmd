@@ -4,4 +4,4 @@ title: "Gallery of complexity"
 
 Pretty pictures coming out of complexity research.
 
-
+This is an edit.

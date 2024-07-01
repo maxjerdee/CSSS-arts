@@ -1,5 +1,5 @@
 ---
-title: "Chaos sampler"
+title: "Game of life"
 
 include-before-body:
   text: |
@@ -430,5 +430,5 @@ include-before-body:
     </script>
 ---
 
-Using chaos to resample music. 
+Interactive simulation of Conway's game of life, music included. 
 

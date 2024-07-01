@@ -17,14 +17,9 @@ website:
       - index.qmd
       - about.qmd
       
-      - section: "Projects"
-        contents:
-          - projects/chaos_sampler.qmd
-          - projects/flocking.qmd
-          - projects/gallery.qmd
-          - projects/guessing.qmd
-          - projects/p5test.qmd
-
+      - section: Projects
+        auto: projects
+          
 format:
   html:
     theme: cosmo

@@ -14,14 +14,16 @@ website:
     style: "docked"
     search: true
     contents:
-      - section: "Intro"
-        contents:
-          - index.qmd
-          - about.qmd
+      - index.qmd
+      - about.qmd
       
       - section: "Projects"
         contents:
-          - projects/beatpad.qmd
+          - projects/chaos_sampler.qmd
+          - projects/flocking.qmd
+          - projects/gallery.qmd
+          - projects/guessing.qmd
+          - projects/p5test.qmd
 
 format:
   html:

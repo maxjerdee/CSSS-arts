@@ -2,6 +2,4 @@
 title: "Home"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This is a website created for the Art and Complexity Collective project at the 2024 Complex Systems Summer School at Santa Fe Institute.

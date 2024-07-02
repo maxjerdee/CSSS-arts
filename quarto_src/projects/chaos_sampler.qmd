@@ -3,13 +3,13 @@ title: "Chaos sampler"
 format: html
 ---
 
-Chopping up samples using chaos (the Lorentz attractor)
-
 ```{=html}
 <button id="playButton">Play Sound</button>
 <div id="recordContainer">
     <img id="record" src="images/amen-record.png" alt="Record">
 </div>
-<link rel="stylesheet" href="chaos_styles.css">
-<script src="chaos_script.js"></script> 
+<link rel="stylesheet" href="css/chaos_sampler.css">
+<script src="js/chaos_sampler.js"></script> 
 ```
+
+Chaotic systems are everywhere in nature. These systems are characterized by the way that small changes can snowball into massive changes in behavior, rendering them hard to predict. For example, in our planet’s climate the flap of a butterfly wing in the right place and right time can cause a hurricane to form. In this interactive demo we leverage the unpredictability of a simple chaotic system known as the Lorentz attractor to remix music recordings in unpredictable ways. Particularly, we split a recording (or “sample”) of music into evenly spaced chunks. A trajectory of the Lorentz attractor is then used to associate each of these pieces of the recording to a point in the system’s phase space. The music is then shuffled by continuing to run the trajectory and playing the chunk associated with the nearest written point in phase space at each step. By harnessing this chaos as a creative force we can play with this ubiquitous feature of the world in an accessible way.

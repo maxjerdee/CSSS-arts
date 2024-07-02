@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Fetch the sample
-            const response = await fetch('samples/amen.wav');
-            const bpm = 136;
-            // const response = await fetch('samples/spottieottiedopaliscious.wav');
-            // const bpm = 100;
+            // const response = await fetch('samples/amen.wav');
+            // const bpm = 136;
+            const response = await fetch('samples/spottieottiedopaliscious.wav');
+            const bpm = 100;
             const arrayBuffer = await response.arrayBuffer();
 
             // Decode the audio data

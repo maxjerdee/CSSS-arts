@@ -1,0 +1,23 @@
+[
+    {
+      "src": "images/image_sunflower.png",
+      "alt": "Artwork 1",
+      "artist": "Artist Name 1"
+    },
+    {
+      "src": "image2.jpg",
+      "alt": "Artwork 2",
+      "artist": "Artist Name 2"
+    },
+    {
+      "src": "image3.jpg",
+      "alt": "Artwork 3",
+      "artist": "Artist Name 3"
+    },
+    {
+      "src": "image4.jpg",
+      "alt": "Artwork 4",
+      "artist": "Artist Name 4"
+    }
+  ]
+  

@@ -1,0 +1,41 @@
+  .env {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    margin: 0;
+    
+    background: linear-gradient(to bottom, #7ccdff 0%, #ffbc58 100%);
+    overflow: hidden;
+  }
+
+  /* canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  } */
+
+/* position the image at the end of the screen */
+
+#mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  #switch_dir {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    z-index: 2;
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #ffbc58;
+    border: 1px solid #6c6a67;
+  }

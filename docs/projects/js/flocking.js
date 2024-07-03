@@ -103,10 +103,14 @@ function nClosestBoids(boid, n) {
 
 function sizeCanvas() {
   const canvas = document.getElementById("boids");
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = width;
-  canvas.height = height;
+    // Make it visually fill the positioned parent
+    canvas.style.width ='100%';
+    canvas.style.height='100%';
+    // ...then set the internal size to match
+    width = canvas.offsetWidth;
+    height = canvas.offsetHeight;
+    canvas.width = width;
+    canvas.height = height;
 }
 
 function keepWithinBounds(boid) {
@@ -402,4 +406,4 @@ window.onload = () => {
   
   initBoids();
   window.requestAnimationFrame(animationLoop);
-};
+};                              

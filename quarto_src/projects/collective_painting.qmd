@@ -1,0 +1,6 @@
+---
+title: "Collective painting"
+format: html
+---
+
+An example of collective painting, how many parts can make a new whole.

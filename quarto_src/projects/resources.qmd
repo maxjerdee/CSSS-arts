@@ -1,0 +1,78 @@
+---
+title: "Inspirations and resources"
+format: html
+---
+
+# Data Visualization Inspirations and Resources
+
+## Inspirations
+
+### Blogs and Websites
+
+- [FlowingData](https://flowingdata.com/)
+  - Nathan Yau explores how designers, statisticians, and computer scientists use data to understand and visualize information.
+  
+- [Information is Beautiful](https://informationisbeautiful.net/)
+  - David McCandless creates visualizations based on facts, data, and ideas with the goal of making information more engaging and fun.
+
+- [Visualising Data](https://www.visualisingdata.com/)
+  - Andy Kirk provides tutorials, resources, and inspiration for data visualizers.
+
+### Galleries and Collections
+
+- [Data Is Beautiful (Reddit)](https://www.reddit.com/r/dataisbeautiful/)
+  - A community where users share data visualizations that tell stories or reveal interesting insights.
+
+- [Data Visualization Catalogue](https://datavizcatalogue.com/)
+  - A collection of different types of data visualizations to help you find the right one for your needs.
+
+- [Information Aesthetics](http://infosthetics.com/)
+  - A blog that explores the aesthetics of data visualization.
+
+## Resources
+
+### Tools and Software
+
+- [Tableau](https://www.tableau.com/)
+  - A powerful data visualization tool that helps you see and understand your data.
+
+- [D3.js](https://d3js.org/)
+  - A JavaScript library for producing dynamic, interactive data visualizations in web browsers.
+
+- [Plotly](https://plotly.com/)
+  - A graphing library that makes interactive, publication-quality graphs online.
+
+- [ggplot2 (R)](https://ggplot2.tidyverse.org/)
+  - A data visualization package for the statistical programming language R, based on the grammar of graphics.
+
+### Books
+
+- [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi) by Edward Tufte
+  - A classic book that provides foundational principles for data visualization.
+
+- [Storytelling with Data](https://www.storytellingwithdata.com/) by Cole Nussbaumer Knaflic
+  - This book teaches you the fundamentals of data visualization and how to communicate effectively with data.
+
+- [Data Visualization: A Handbook for Data Driven Design](https://www.amazon.com/Data-Visualization-Handbook-Driven-Design/dp/1473912148) by Andy Kirk
+  - A practical guide to creating effective data visualizations.
+
+### Tutorials and Courses
+
+- [Udacity Data Visualization Nanodegree](https://www.udacity.com/course/data-visualization-nanodegree--nd197)
+  - An online program that teaches the tools, techniques, and methodologies to visualize data.
+
+- [Coursera: Data Visualization with Python](https://www.coursera.org/learn/python-for-data-visualization)
+  - A course that covers the basics of data visualization using Python.
+
+- [LinkedIn Learning: Data Visualization](https://www.linkedin.com/learning/topics/data-visualization)
+  - A collection of courses and tutorials on various data visualization tools and techniques.
+
+## Community and Forums
+
+- [Data Visualization Society](https://www.datavisualizationsociety.com/)
+  - A community dedicated to advancing the field of data visualization.
+
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/data-visualization)
+  - A forum where you can ask questions and get answers related to data visualization.
+
+Feel free to explore these links and enhance your data visualization skills!

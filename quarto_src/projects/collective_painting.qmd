@@ -2,7 +2,7 @@
 title: "Collective painting"
 format: html
 ---
-
+contributed by Galen Hall and Amara McCune
 
 
 

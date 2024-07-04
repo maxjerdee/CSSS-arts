@@ -2,6 +2,7 @@
 title: "Game of life"
 format: html
 ---
+contributed by Max Jerdee
 
 ```{=html}
 <!-- Grid of buttons -->

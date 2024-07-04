@@ -2,6 +2,7 @@
 title: "Chaos sampler"
 format: html
 ---
+contributed by Max Jerdee
 
 ```{=html}
 <div id="chaosContainer" style="display: flex; justify-content: space-between;">

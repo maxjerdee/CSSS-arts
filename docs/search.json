@@ -4,7 +4,7 @@
     "href": "projects/resources.html",
     "title": "Inspirations and resources",
     "section": "",
-    "text": "FlowingData\n\nNathan Yau explores how designers, statisticians, and computer scientists use data to understand and visualize information.\n\nInformation is Beautiful\n\nDavid McCandless creates visualizations based on facts, data, and ideas with the goal of making information more engaging and fun.\n\nVisualising Data\n\nAndy Kirk provides tutorials, resources, and inspiration for data visualizers.\n\n\n\n\n\n\nData Is Beautiful (Reddit)\n\nA community where users share data visualizations that tell stories or reveal interesting insights.\n\nData Visualization Catalogue\n\nA collection of different types of data visualizations to help you find the right one for your needs.\n\nInformation Aesthetics\n\nA blog that explores the aesthetics of data visualization.\n\n\n\n\n\n\n\n\n\nTableau\n\nA powerful data visualization tool that helps you see and understand your data.\n\nD3.js\n\nA JavaScript library for producing dynamic, interactive data visualizations in web browsers.\n\nPlotly\n\nA graphing library that makes interactive, publication-quality graphs online.\n\nggplot2 (R)\n\nA data visualization package for the statistical programming language R, based on the grammar of graphics.\n\n\n\n\n\n\nThe Visual Display of Quantitative Information by Edward Tufte\n\nA classic book that provides foundational principles for data visualization.\n\nStorytelling with Data by Cole Nussbaumer Knaflic\n\nThis book teaches you the fundamentals of data visualization and how to communicate effectively with data.\n\nData Visualization: A Handbook for Data Driven Design by Andy Kirk\n\nA practical guide to creating effective data visualizations.\n\n\n\n\n\n\nUdacity Data Visualization Nanodegree\n\nAn online program that teaches the tools, techniques, and methodologies to visualize data.\n\nCoursera: Data Visualization with Python\n\nA course that covers the basics of data visualization using Python.\n\nLinkedIn Learning: Data Visualization\n\nA collection of courses and tutorials on various data visualization tools and techniques.\n\n\n\n\n\n\n\nData Visualization Society\n\nA community dedicated to advancing the field of data visualization.\n\nStack Overflow\n\nA forum where you can ask questions and get answers related to data visualization.\n\n\nFeel free to explore these links and enhance your data visualization skills!",
+    "text": "Carlos Garcia’s Website\n\n\n\n\n\nFederica Fragapane on Behance\nFederica Fragapane’s Portfolio",
     "crumbs": [
       "Home",
       "Projects",
@@ -16,7 +16,115 @@
     "href": "projects/resources.html#inspirations",
     "title": "Inspirations and resources",
     "section": "",
-    "text": "FlowingData\n\nNathan Yau explores how designers, statisticians, and computer scientists use data to understand and visualize information.\n\nInformation is Beautiful\n\nDavid McCandless creates visualizations based on facts, data, and ideas with the goal of making information more engaging and fun.\n\nVisualising Data\n\nAndy Kirk provides tutorials, resources, and inspiration for data visualizers.\n\n\n\n\n\n\nData Is Beautiful (Reddit)\n\nA community where users share data visualizations that tell stories or reveal interesting insights.\n\nData Visualization Catalogue\n\nA collection of different types of data visualizations to help you find the right one for your needs.\n\nInformation Aesthetics\n\nA blog that explores the aesthetics of data visualization.",
+    "text": "Carlos Garcia’s Website\n\n\n\n\n\nFederica Fragapane on Behance\nFederica Fragapane’s Portfolio",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#data-sketches",
+    "href": "projects/resources.html#data-sketches",
+    "title": "Inspirations and resources",
+    "section": "Data Sketches",
+    "text": "Data Sketches\n\nData Sketches by Nadieh Bremer and Shirley Wu",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#refik-anadol",
+    "href": "projects/resources.html#refik-anadol",
+    "title": "Inspirations and resources",
+    "section": "Refik Anadol",
+    "text": "Refik Anadol\n\nTED Talk: Art in the Age of Machine Intelligence\nRefik Anadol on Instagram",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#explorable-explanations",
+    "href": "projects/resources.html#explorable-explanations",
+    "title": "Inspirations and resources",
+    "section": "Explorable Explanations",
+    "text": "Explorable Explanations\n\nExplorable Explanations",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#liam-young",
+    "href": "projects/resources.html#liam-young",
+    "title": "Inspirations and resources",
+    "section": "Liam Young",
+    "text": "Liam Young\n\nLiam Young’s Website",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#phet-interactive-simulations",
+    "href": "projects/resources.html#phet-interactive-simulations",
+    "title": "Inspirations and resources",
+    "section": "PhET Interactive Simulations",
+    "text": "PhET Interactive Simulations\n\nPhET Interactive Simulations",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#santiago-ortiz",
+    "href": "projects/resources.html#santiago-ortiz",
+    "title": "Inspirations and resources",
+    "section": "Santiago Ortiz",
+    "text": "Santiago Ortiz\n\nSantiago Ortiz’s Website",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#virtual-lab-by-quantum-flytrap",
+    "href": "projects/resources.html#virtual-lab-by-quantum-flytrap",
+    "title": "Inspirations and resources",
+    "section": "Virtual Lab by Quantum Flytrap",
+    "text": "Virtual Lab by Quantum Flytrap\n\nVirtual Lab",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#pedro-cruz",
+    "href": "projects/resources.html#pedro-cruz",
+    "title": "Inspirations and resources",
+    "section": "Pedro Cruz",
+    "text": "Pedro Cruz\n\nPedro Cruz’s Website",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Inspirations and resources"
+    ]
+  },
+  {
+    "objectID": "projects/resources.html#neat-projects",
+    "href": "projects/resources.html#neat-projects",
+    "title": "Inspirations and resources",
+    "section": "Neat projects",
+    "text": "Neat projects\n\nChaotic music\n\nDiana Dabby making music with a Lornetz attractor\n\n\n\nRoyal constellations\n\nExplore a thousand years of ancestral connections in the European royal families\n\n\n\nCellular Automata: Multi-State world (rock, paper, scissor, lizard, spock)\n\nYouTube Video\nNature Article\n\n\n\nExographer\n\nExographer on Steam\n\n\n\nOrnithographies\n\nOrnithographies by Xavi Bou",
     "crumbs": [
       "Home",
       "Projects",
@@ -27,20 +135,8 @@
     "objectID": "projects/resources.html#resources",
     "href": "projects/resources.html#resources",
     "title": "Inspirations and resources",
-    "section": "",
-    "text": "Tableau\n\nA powerful data visualization tool that helps you see and understand your data.\n\nD3.js\n\nA JavaScript library for producing dynamic, interactive data visualizations in web browsers.\n\nPlotly\n\nA graphing library that makes interactive, publication-quality graphs online.\n\nggplot2 (R)\n\nA data visualization package for the statistical programming language R, based on the grammar of graphics.\n\n\n\n\n\n\nThe Visual Display of Quantitative Information by Edward Tufte\n\nA classic book that provides foundational principles for data visualization.\n\nStorytelling with Data by Cole Nussbaumer Knaflic\n\nThis book teaches you the fundamentals of data visualization and how to communicate effectively with data.\n\nData Visualization: A Handbook for Data Driven Design by Andy Kirk\n\nA practical guide to creating effective data visualizations.\n\n\n\n\n\n\nUdacity Data Visualization Nanodegree\n\nAn online program that teaches the tools, techniques, and methodologies to visualize data.\n\nCoursera: Data Visualization with Python\n\nA course that covers the basics of data visualization using Python.\n\nLinkedIn Learning: Data Visualization\n\nA collection of courses and tutorials on various data visualization tools and techniques.",
-    "crumbs": [
-      "Home",
-      "Projects",
-      "Inspirations and resources"
-    ]
-  },
-  {
-    "objectID": "projects/resources.html#community-and-forums",
-    "href": "projects/resources.html#community-and-forums",
-    "title": "Inspirations and resources",
-    "section": "",
-    "text": "Data Visualization Society\n\nA community dedicated to advancing the field of data visualization.\n\nStack Overflow\n\nA forum where you can ask questions and get answers related to data visualization.\n\n\nFeel free to explore these links and enhance your data visualization skills!",
+    "section": "Resources",
+    "text": "Resources\n\nTools and Software\n\nTableau\n\nA powerful data visualization tool that helps you see and understand your data.\n\nD3.js\n\nA JavaScript library for producing dynamic, interactive data visualizations in web browsers.\n\nPlotly\n\nA graphing library that makes interactive, publication-quality graphs online.\n\nggplot2 (R)\n\nA data visualization package for the statistical programming language R, based on the grammar of graphics.\n\n\n\n\nBooks\n\nEncyclopedia of Complexity and Systems Science by Robert A. Meyers\nMaking with Data - Physical Design and Craft in a Data-Driven World\n\n\n\nTutorials and Courses",
     "crumbs": [
       "Home",
       "Projects",
@@ -64,7 +160,7 @@
     "href": "projects/fitness_landscapes.html",
     "title": "Evolution on Fitness landscapes",
     "section": "",
-    "text": "The simplest case of evolution in nature is encountered in organisms like bacteria. Bacterial cells are biological machines that produce and use proteins to metabolize resources in their environment, and subsequently reproduce to create copies of themselves. The production of these proteins is delegated to a triad of processes that form the “central dogma” of molecular biology. The first level of this cascade is a polymeric molecule called DNA, which is sometimes referred to as the building block of life. Through a series of steps, the sequences of components comprising this molecule is converted into a protein that then performs the functions necessary to sustain life in the cell.\n\n\n\nFigure 1: The central dogma of molecular biology. Source: “Intro to gene expression” Khan Academy. Accessed June 29, 2024. https://www.khanacademy.org/science/ap-biology/gene-expression-and-regulation/translation/a/intro-to-gene-expression-central-dogma\n\n\nIn the first process, called transcription, the DNA strand is copied into a RNA strand (another polymeric molecule like DNA). Subsequently, this RNA strand is “translated” into a protein by molecular assemblies called ribosomes. In this process, the ribosome reads three nucleic acids at once (collectively called a codon), and adds an amino acid to a growing protein chain. The completed protein chains fold together to create the final protein that then participates in cellular reactions like metabolism and reproduction.",
+    "text": "contributed by Bhaskar Kumawat",
     "crumbs": [
       "Home",
       "Projects",
@@ -75,8 +171,8 @@
     "objectID": "projects/fitness_landscapes.html#how-dna-works",
     "href": "projects/fitness_landscapes.html#how-dna-works",
     "title": "Evolution on Fitness landscapes",
-    "section": "",
-    "text": "The simplest case of evolution in nature is encountered in organisms like bacteria. Bacterial cells are biological machines that produce and use proteins to metabolize resources in their environment, and subsequently reproduce to create copies of themselves. The production of these proteins is delegated to a triad of processes that form the “central dogma” of molecular biology. The first level of this cascade is a polymeric molecule called DNA, which is sometimes referred to as the building block of life. Through a series of steps, the sequences of components comprising this molecule is converted into a protein that then performs the functions necessary to sustain life in the cell.\n\n\n\nFigure 1: The central dogma of molecular biology. Source: “Intro to gene expression” Khan Academy. Accessed June 29, 2024. https://www.khanacademy.org/science/ap-biology/gene-expression-and-regulation/translation/a/intro-to-gene-expression-central-dogma\n\n\nIn the first process, called transcription, the DNA strand is copied into a RNA strand (another polymeric molecule like DNA). Subsequently, this RNA strand is “translated” into a protein by molecular assemblies called ribosomes. In this process, the ribosome reads three nucleic acids at once (collectively called a codon), and adds an amino acid to a growing protein chain. The completed protein chains fold together to create the final protein that then participates in cellular reactions like metabolism and reproduction.",
+    "section": "How DNA works",
+    "text": "How DNA works\nThe simplest case of evolution in nature is encountered in organisms like bacteria. Bacterial cells are biological machines that produce and use proteins to metabolize resources in their environment, and subsequently reproduce to create copies of themselves. The production of these proteins is delegated to a triad of processes that form the “central dogma” of molecular biology. The first level of this cascade is a polymeric molecule called DNA, which is sometimes referred to as the building block of life. Through a series of steps, the sequences of components comprising this molecule is converted into a protein that then performs the functions necessary to sustain life in the cell.\n\n\n\nFigure 1: The central dogma of molecular biology. Source: “Intro to gene expression” Khan Academy. Accessed June 29, 2024. https://www.khanacademy.org/science/ap-biology/gene-expression-and-regulation/translation/a/intro-to-gene-expression-central-dogma\n\n\nIn the first process, called transcription, the DNA strand is copied into a RNA strand (another polymeric molecule like DNA). Subsequently, this RNA strand is “translated” into a protein by molecular assemblies called ribosomes. In this process, the ribosome reads three nucleic acids at once (collectively called a codon), and adds an amino acid to a growing protein chain. The completed protein chains fold together to create the final protein that then participates in cellular reactions like metabolism and reproduction.",
     "crumbs": [
       "Home",
       "Projects",
@@ -172,7 +268,7 @@
     "href": "projects/chaos_sampler.html",
     "title": "Chaos sampler",
     "section": "",
-    "text": "Play Sound\n\n \nChaotic systems are everywhere in nature. These systems are characterized by the way that small changes can snowball into massive changes in behavior, rendering them hard to predict. For example, in our planet’s climate the flap of a butterfly wing in the right place and right time can cause a hurricane to form. In this interactive demo we leverage the unpredictability of a simple chaotic system known as the Lorentz attractor to remix music recordings in unpredictable ways. Particularly, we split a recording (or “sample”) of music into evenly spaced chunks. A trajectory of the Lorentz attractor is then used to associate each of these pieces of the recording to a point in the system’s phase space. The music is then shuffled by continuing to run the trajectory and playing the chunk associated with the nearest written point in phase space at each step. By harnessing this chaos as a creative force we can play with this ubiquitous feature of the world in an accessible way.",
+    "text": "contributed by Max Jerdee\n\n    \n    \n\n\n    \n\nPlay Sound\n\n \nChaotic systems are everywhere in nature. These systems are characterized by the way that small changes can snowball into massive changes in behavior, rendering them hard to predict. For example, in our planet’s climate the flap of a butterfly wing in the right place and right time can cause a hurricane to form. In this interactive demo we leverage the unpredictability of a simple chaotic system known as the Lorentz attractor to remix music recordings in unpredictable ways. Particularly, we split a recording (or “sample”) of music into evenly spaced chunks. A trajectory of the Lorentz attractor is then used to associate each of these pieces of the recording to a point in the system’s phase space. The music is then shuffled by continuing to run the trajectory and playing the chunk associated with the nearest written point in phase space at each step. By harnessing this chaos as a creative force we can play with this ubiquitous feature of the world in an accessible way.",
     "crumbs": [
       "Home",
       "Projects",
@@ -184,18 +280,18 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "If (complexity) science requires a hypothesis, art requires a portfolio. Here, we propose to combine both in an immersive and interactive way that brings complexity concepts into the public domain. While static representations of complex phenomena provide foundational understanding, they often fail to capture the emergent, dynamic, and aesthetically pleasing behavior inherent in these systems. This manifesto advocates for embracing the art within complexity, transforming abstract scientific concepts into accessible, playful, and visually appealing experiences.\nAs a two-part project, we propose both the creation of a living digital archive and an exhibition to bring people closer to complexity. As part of the digital archive, we have compiled examples illustrating key scientific concepts in an engaging way:\n\n\nChaotic systems, characterized by small changes leading to massive, unpredictable outcomes, are everywhere in nature. This interactive demo uses the Lorentz attractor to remix music recordings unpredictably, illustrating the creative potential of chaos.\n\n\n\nAn interactive simulation of flocking behavior demonstrating emergent phenomena.\n\n\n\nFitness landscapes, essential in evolutionary biology, help visualize how populations respond to natural selection. Unlike static images, our simulations allow users to interact with parameters like population size and mutation rates, and experiment with dynamic “seascapes” to understand evolution in changing environments and explore the concept of “evolvability.”\n\n\n\nConway’s Game of Life demonstrates how simple rules can generate complex behaviors on a 2-dimensional grid, where cells live or die based on their neighbors. This demo simulates the game, using sounds and a Novation Launchpad to create a unified physical, auditory, and visual experience, illustrating the emergence of complexity.\n\n\n\nAn example of collective painting, how many parts can make a new whole.\n\n\n\nBeauty often naturally emerges in research on complexity. Created to compile images and media generated by participants of this summer school as a starting point, this gallery aims to continue incorporating everyone’s complexity inspirations encountered during our tinkering.\n\n\nDesigned to travel to multiple locations and reach a diverse audience, the exhibition we propose offers an interactive experience, allowing visitors to touch and move physical objects, thereby humanizing complexity. It highlights the aesthetic dimensions and emergent properties of complex systems through networks of interactions, educational modules, and artistic installations. Visitors will be able to immerse themselves in the simplicity of complexity, exploring everything from biological microscopic systems to macroscopic classical physics. The exhibition’s design will enable participants to act both as spectators and integral parts of the system, illustrating the concept that the whole is greater than the sum of its parts and that, as with complex systems, interactive art also defies complete predictability.\nAs accompanying material for the exhibition, the development of educational modules is suggested, using platforms such as Complexity Explorer, to disseminate the concepts presented in the exhibition. These modules will teach participants to transform their favorite complexity concepts into art objects, either physical or digital.\nIn essence, both the living digital archive and the exhibition aim to be a dynamic and visual collective exploration of complex systems, showing that science and art are not mutually exclusive but rather complementary ways through which we can appreciate the world.",
+    "text": "edited by Sara Mesquita\nIf (complexity) science requires a hypothesis, art requires a portfolio. Here, we propose to combine both in an immersive and interactive way that brings complexity concepts into the public domain. While static representations of complex phenomena provide foundational understanding, they often fail to capture the emergent, dynamic, and aesthetically pleasing behavior inherent in these systems. This manifesto advocates for embracing the art within complexity, transforming abstract scientific concepts into accessible, playful, and visually appealing experiences.\nAs a two-part project, we propose both the creation of a living digital archive and an exhibition to bring people closer to complexity. As part of the digital archive, we have compiled examples illustrating key scientific concepts in an engaging way:\n\n\nChaotic systems, characterized by small changes leading to massive, unpredictable outcomes, are everywhere in nature. This interactive demo uses the Lorentz attractor to remix music recordings unpredictably, illustrating the creative potential of chaos.\n\n\n\nAn interactive simulation of flocking behavior demonstrating emergent phenomena.\n\n\n\nFitness landscapes, essential in evolutionary biology, help visualize how populations respond to natural selection. Unlike static images, our simulations allow users to interact with parameters like population size and mutation rates, and experiment with dynamic “seascapes” to understand evolution in changing environments and explore the concept of “evolvability.”\n\n\n\nConway’s Game of Life demonstrates how simple rules can generate complex behaviors on a 2-dimensional grid, where cells live or die based on their neighbors. This demo simulates the game, using sounds and a Novation Launchpad to create a unified physical, auditory, and visual experience, illustrating the emergence of complexity.\n\n\n\nAn example of collective painting, how many parts can make a new whole.\n\n\n\nBeauty often naturally emerges in research on complexity. Created to compile images and media generated by participants of this summer school as a starting point, this gallery aims to continue incorporating everyone’s complexity inspirations encountered during our tinkering.\n\n\n\nDesigned to travel to multiple locations and reach a diverse audience, the exhibition we propose offers an interactive experience, allowing visitors to touch and move physical objects, thereby humanizing complexity. It highlights the aesthetic dimensions and emergent properties of complex systems through networks of interactions, educational modules, and artistic installations. Visitors will be able to immerse themselves in the simplicity of complexity, exploring everything from biological microscopic systems to macroscopic classical physics. The exhibition’s design will enable participants to act both as spectators and integral parts of the system, illustrating the concept that the whole is greater than the sum of its parts and that, as with complex systems, interactive art also defies complete predictability.\nAs accompanying material for the exhibition, the development of educational modules is suggested, using platforms such as Complexity Explorer, to disseminate the concepts presented in the exhibition. These modules will teach participants to transform their favorite complexity concepts into art objects, either physical or digital.\nIn essence, both the living digital archive and the exhibition aim to be a dynamic and visual collective exploration of complex systems, showing that science and art are not mutually exclusive but rather complementary ways through which we can appreciate the world.",
     "crumbs": [
       "Home",
       "About"
     ]
   },
   {
-    "objectID": "about.html#art-in-complexity",
-    "href": "about.html#art-in-complexity",
+    "objectID": "about.html#art-in-complexity-a-manifesto-for-visual-collective-experimentation",
+    "href": "about.html#art-in-complexity-a-manifesto-for-visual-collective-experimentation",
     "title": "About",
     "section": "",
-    "text": "If (complexity) science requires a hypothesis, art requires a portfolio. Here, we propose to combine both in an immersive and interactive way that brings complexity concepts into the public domain. While static representations of complex phenomena provide foundational understanding, they often fail to capture the emergent, dynamic, and aesthetically pleasing behavior inherent in these systems. This manifesto advocates for embracing the art within complexity, transforming abstract scientific concepts into accessible, playful, and visually appealing experiences.\nAs a two-part project, we propose both the creation of a living digital archive and an exhibition to bring people closer to complexity. As part of the digital archive, we have compiled examples illustrating key scientific concepts in an engaging way:\n\n\nChaotic systems, characterized by small changes leading to massive, unpredictable outcomes, are everywhere in nature. This interactive demo uses the Lorentz attractor to remix music recordings unpredictably, illustrating the creative potential of chaos.\n\n\n\nAn interactive simulation of flocking behavior demonstrating emergent phenomena.\n\n\n\nFitness landscapes, essential in evolutionary biology, help visualize how populations respond to natural selection. Unlike static images, our simulations allow users to interact with parameters like population size and mutation rates, and experiment with dynamic “seascapes” to understand evolution in changing environments and explore the concept of “evolvability.”\n\n\n\nConway’s Game of Life demonstrates how simple rules can generate complex behaviors on a 2-dimensional grid, where cells live or die based on their neighbors. This demo simulates the game, using sounds and a Novation Launchpad to create a unified physical, auditory, and visual experience, illustrating the emergence of complexity.\n\n\n\nAn example of collective painting, how many parts can make a new whole.\n\n\n\nBeauty often naturally emerges in research on complexity. Created to compile images and media generated by participants of this summer school as a starting point, this gallery aims to continue incorporating everyone’s complexity inspirations encountered during our tinkering.\n\n\n\nDesigned to travel to multiple locations and reach a diverse audience, the exhibition we propose offers an interactive experience, allowing visitors to touch and move physical objects, thereby humanizing complexity. It highlights the aesthetic dimensions and emergent properties of complex systems through networks of interactions, educational modules, and artistic installations. Visitors will be able to immerse themselves in the simplicity of complexity, exploring everything from biological microscopic systems to macroscopic classical physics. The exhibition’s design will enable participants to act both as spectators and integral parts of the system, illustrating the concept that the whole is greater than the sum of its parts and that, as with complex systems, interactive art also defies complete predictability.\nAs accompanying material for the exhibition, the development of educational modules is suggested, using platforms such as Complexity Explorer, to disseminate the concepts presented in the exhibition. These modules will teach participants to transform their favorite complexity concepts into art objects, either physical or digital.\nIn essence, both the living digital archive and the exhibition aim to be a dynamic and visual collective exploration of complex systems, showing that science and art are not mutually exclusive but rather complementary ways through which we can appreciate the world.",
+    "text": "edited by Sara Mesquita\nIf (complexity) science requires a hypothesis, art requires a portfolio. Here, we propose to combine both in an immersive and interactive way that brings complexity concepts into the public domain. While static representations of complex phenomena provide foundational understanding, they often fail to capture the emergent, dynamic, and aesthetically pleasing behavior inherent in these systems. This manifesto advocates for embracing the art within complexity, transforming abstract scientific concepts into accessible, playful, and visually appealing experiences.\nAs a two-part project, we propose both the creation of a living digital archive and an exhibition to bring people closer to complexity. As part of the digital archive, we have compiled examples illustrating key scientific concepts in an engaging way:\n\n\nChaotic systems, characterized by small changes leading to massive, unpredictable outcomes, are everywhere in nature. This interactive demo uses the Lorentz attractor to remix music recordings unpredictably, illustrating the creative potential of chaos.\n\n\n\nAn interactive simulation of flocking behavior demonstrating emergent phenomena.\n\n\n\nFitness landscapes, essential in evolutionary biology, help visualize how populations respond to natural selection. Unlike static images, our simulations allow users to interact with parameters like population size and mutation rates, and experiment with dynamic “seascapes” to understand evolution in changing environments and explore the concept of “evolvability.”\n\n\n\nConway’s Game of Life demonstrates how simple rules can generate complex behaviors on a 2-dimensional grid, where cells live or die based on their neighbors. This demo simulates the game, using sounds and a Novation Launchpad to create a unified physical, auditory, and visual experience, illustrating the emergence of complexity.\n\n\n\nAn example of collective painting, how many parts can make a new whole.\n\n\n\nBeauty often naturally emerges in research on complexity. Created to compile images and media generated by participants of this summer school as a starting point, this gallery aims to continue incorporating everyone’s complexity inspirations encountered during our tinkering.\n\n\n\nDesigned to travel to multiple locations and reach a diverse audience, the exhibition we propose offers an interactive experience, allowing visitors to touch and move physical objects, thereby humanizing complexity. It highlights the aesthetic dimensions and emergent properties of complex systems through networks of interactions, educational modules, and artistic installations. Visitors will be able to immerse themselves in the simplicity of complexity, exploring everything from biological microscopic systems to macroscopic classical physics. The exhibition’s design will enable participants to act both as spectators and integral parts of the system, illustrating the concept that the whole is greater than the sum of its parts and that, as with complex systems, interactive art also defies complete predictability.\nAs accompanying material for the exhibition, the development of educational modules is suggested, using platforms such as Complexity Explorer, to disseminate the concepts presented in the exhibition. These modules will teach participants to transform their favorite complexity concepts into art objects, either physical or digital.\nIn essence, both the living digital archive and the exhibition aim to be a dynamic and visual collective exploration of complex systems, showing that science and art are not mutually exclusive but rather complementary ways through which we can appreciate the world.",
     "crumbs": [
       "Home",
       "About"
@@ -216,7 +312,7 @@
     "href": "projects/collective_painting.html",
     "title": "Collective painting",
     "section": "",
-    "text": "An example of collective painting, how many parts can make a new whole.",
+    "text": "contributed by Galen Hall and Amara McCune\n\n\nAn example of collective painting, how many parts can make a new whole.",
     "crumbs": [
       "Home",
       "Projects",
@@ -228,7 +324,7 @@
     "href": "projects/flocking.html",
     "title": "Bird flocking",
     "section": "",
-    "text": "Change Direction\n  \n\n\n\n \n\n \nA flock of birds is beautiful as well as complex. Complex emergent behaviors often arise from simple interactions among a large number of units. Boid’s Algorithm, with three simple interaction rules, allows us to mimic such emergent behaviors in a flock of birds. In this world, each bird (or Boid) has a finite perception radius, and they (1) align toward their average local velocity, (2) steer toward the local center of mass, and (3) steer away to avoid crowding.\nWe also imposed an additional rule in this world: the angular velocity of a bird’s wing is proportional to its speed. Drawing trails of the wings allows us to create pictures similar to the Ornithography by Xavi Bou.\n\n\n\nAn ornithography by Xavi Bou.\n\n\nOther rules, such as avoiding obstacles, can also be imposed. In the visualization, using a webcam and an object detection algorithm, we map the real-time positions of detected humans as obstacles in the 2D world of these birds, which they actively avoid.",
+    "text": "contributed by Ritam Pal\n\n\n\n\n\n  \n  Change Direction\n  \n\n\n\n \n\n \nA flock of birds is beautiful as well as complex. Complex emergent behaviors often arise from simple interactions among a large number of units. Boid’s Algorithm, with three simple interaction rules, allows us to mimic such emergent behaviors in a flock of birds. In this world, each bird (or Boid) has a finite perception radius, and they (1) align toward their average local velocity, (2) steer toward the local center of mass, and (3) steer away to avoid crowding.\nWe also imposed an additional rule in this world: the angular velocity of a bird’s wing is proportional to its speed. Drawing trails of the wings allows us to create pictures similar to the Ornithography by Xavi Bou.\n\n\n\nAn ornithography by Xavi Bou.\n\n\nOther rules, such as avoiding obstacles, can also be imposed. In the visualization, using a webcam and an object detection algorithm, we map the real-time positions of detected humans as obstacles in the 2D world of these birds, which they actively avoid.",
     "crumbs": [
       "Home",
       "Projects",
@@ -240,22 +336,11 @@
     "href": "projects/game_of_life.html",
     "title": "Game of life",
     "section": "",
-    "text": "Conway’s game of life is a compact, elegant example of how simple principles can generate complex behaviors. The “game” is played on a 2-dimensional grid, and loosely simulates changes in the population of a species over space and time. Each grid square may either be “alive” or “dead” at each time interval. Only if a grid cell has between 3 and 5 of its 8 neighbors alive will it be alive and happy on the next turn, otherwise it will die of either under- or over-crowding. From this simple rule alone, very complicated behavior can be observed. In this demo we simulate this game of life and play sounds when each of the grid cells is alive. We also mirror our simulation on a Novation Launchpad, an 8 x 8 grid of buttons that can light up with colors. By creating a unified physical, auditory, and visual experience we have an engaging mode to play with this toy example of how complexity can emerge.",
+    "text": "contributed by Max Jerdee\n\n\n\n\n\n\n\n\n \n\n \n\nConway’s game of life is a compact, elegant example of how simple principles can generate complex behaviors. The “game” is played on a 2-dimensional grid, and loosely simulates changes in the population of a species over space and time. Each grid square may either be “alive” or “dead” at each time interval. Only if a grid cell has between 3 and 5 of its 8 neighbors alive will it be alive and happy on the next turn, otherwise it will die of either under- or over-crowding. From this simple rule alone, very complicated behavior can be observed. In this demo we simulate this game of life and play sounds when each of the grid cells is alive. We also mirror our simulation on a Novation Launchpad, an 8 x 8 grid of buttons that can light up with colors. By creating a unified physical, auditory, and visual experience we have an engaging mode to play with this toy example of how complexity can emerge.",
     "crumbs": [
       "Home",
       "Projects",
       "Game of life"
-    ]
-  },
-  {
-    "objectID": "about.html#art-in-complexity-a-manifesto-for-visual-collective-experimentation",
-    "href": "about.html#art-in-complexity-a-manifesto-for-visual-collective-experimentation",
-    "title": "About",
-    "section": "",
-    "text": "If (complexity) science requires a hypothesis, art requires a portfolio. Here, we propose to combine both in an immersive and interactive way that brings complexity concepts into the public domain. While static representations of complex phenomena provide foundational understanding, they often fail to capture the emergent, dynamic, and aesthetically pleasing behavior inherent in these systems. This manifesto advocates for embracing the art within complexity, transforming abstract scientific concepts into accessible, playful, and visually appealing experiences.\nAs a two-part project, we propose both the creation of a living digital archive and an exhibition to bring people closer to complexity. As part of the digital archive, we have compiled examples illustrating key scientific concepts in an engaging way:\n\n\nChaotic systems, characterized by small changes leading to massive, unpredictable outcomes, are everywhere in nature. This interactive demo uses the Lorentz attractor to remix music recordings unpredictably, illustrating the creative potential of chaos.\n\n\n\nAn interactive simulation of flocking behavior demonstrating emergent phenomena.\n\n\n\nFitness landscapes, essential in evolutionary biology, help visualize how populations respond to natural selection. Unlike static images, our simulations allow users to interact with parameters like population size and mutation rates, and experiment with dynamic “seascapes” to understand evolution in changing environments and explore the concept of “evolvability.”\n\n\n\nConway’s Game of Life demonstrates how simple rules can generate complex behaviors on a 2-dimensional grid, where cells live or die based on their neighbors. This demo simulates the game, using sounds and a Novation Launchpad to create a unified physical, auditory, and visual experience, illustrating the emergence of complexity.\n\n\n\nAn example of collective painting, how many parts can make a new whole.\n\n\n\nBeauty often naturally emerges in research on complexity. Created to compile images and media generated by participants of this summer school as a starting point, this gallery aims to continue incorporating everyone’s complexity inspirations encountered during our tinkering.\n\n\nDesigned to travel to multiple locations and reach a diverse audience, the exhibition we propose offers an interactive experience, allowing visitors to touch and move physical objects, thereby humanizing complexity. It highlights the aesthetic dimensions and emergent properties of complex systems through networks of interactions, educational modules, and artistic installations. Visitors will be able to immerse themselves in the simplicity of complexity, exploring everything from biological microscopic systems to macroscopic classical physics. The exhibition’s design will enable participants to act both as spectators and integral parts of the system, illustrating the concept that the whole is greater than the sum of its parts and that, as with complex systems, interactive art also defies complete predictability.\nAs accompanying material for the exhibition, the development of educational modules is suggested, using platforms such as Complexity Explorer, to disseminate the concepts presented in the exhibition. These modules will teach participants to transform their favorite complexity concepts into art objects, either physical or digital.\nIn essence, both the living digital archive and the exhibition aim to be a dynamic and visual collective exploration of complex systems, showing that science and art are not mutually exclusive but rather complementary ways through which we can appreciate the world.",
-    "crumbs": [
-      "Home",
-      "About"
     ]
   }
 ]

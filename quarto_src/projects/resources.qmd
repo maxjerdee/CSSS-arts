@@ -3,31 +3,57 @@ title: "Inspirations and resources"
 format: html
 ---
 
-# Data Visualization Inspirations and Resources
-
 ## Inspirations
 
-### Blogs and Websites
+### Carlos Garcia
+- [Carlos Garcia's Website](https://l05.is/)
 
-- [FlowingData](https://flowingdata.com/)
-  - Nathan Yau explores how designers, statisticians, and computer scientists use data to understand and visualize information.
-  
-- [Information is Beautiful](https://informationisbeautiful.net/)
-  - David McCandless creates visualizations based on facts, data, and ideas with the goal of making information more engaging and fun.
+### Federica Fragapane
+- [Federica Fragapane on Behance](https://www.behance.net/FedericaFragapane)
+- [Federica Fragapane's Portfolio](https://cargocollective.com/federicafragapane#:~:text=Federica%20Fragapane-,Federica%20Fragapane,trying%20to%20combine%20these%20worlds)
 
-- [Visualising Data](https://www.visualisingdata.com/)
-  - Andy Kirk provides tutorials, resources, and inspiration for data visualizers.
+## Data Sketches
+- [Data Sketches by Nadieh Bremer and Shirley Wu](https://www.datasketch.es)
 
-### Galleries and Collections
+## Refik Anadol
+- [TED Talk: Art in the Age of Machine Intelligence](https://www.ted.com/talks/refik_anadol_art_in_the_age_of_machine_intelligence?trigger=5s)
+- [Refik Anadol on Instagram](https://www.instagram.com/refikanadol/?hl=en)
 
-- [Data Is Beautiful (Reddit)](https://www.reddit.com/r/dataisbeautiful/)
-  - A community where users share data visualizations that tell stories or reveal interesting insights.
+## Explorable Explanations
+- [Explorable Explanations](https://explorabl.es)
 
-- [Data Visualization Catalogue](https://datavizcatalogue.com/)
-  - A collection of different types of data visualizations to help you find the right one for your needs.
+## Liam Young
+- [Liam Young's Website](https://liamyoung.org)
 
-- [Information Aesthetics](http://infosthetics.com/)
-  - A blog that explores the aesthetics of data visualization.
+## PhET Interactive Simulations
+- [PhET Interactive Simulations](https://phet.colorado.edu)
+
+## Santiago Ortiz
+- [Santiago Ortiz's Website](https://moebio.com)
+
+## Virtual Lab by Quantum Flytrap
+- [Virtual Lab](https://quantumflytrap.com/virtual-lab/)
+
+## Pedro Cruz
+- [Pedro Cruz's Website](https://pmcruz.com)
+
+## Neat projects
+
+### Chaotic music 
+- [Diana Dabby making music with a Lornetz attractor](https://www.youtube.com/watch?v=dL4VKuKNgXI)
+
+### Royal constellations
+- [Explore a thousand years of ancestral connections in the European royal families](https://royalconstellations.visualcinnamon.com/)
+
+### Cellular Automata: Multi-State world (rock, paper, scissor, lizard, spock)
+- [YouTube Video](https://www.youtube.com/watch?v=TvZI6Xc0J1Y)
+- [Nature Article](https://www.nature.com/articles/nature00823)
+
+### Exographer
+- [Exographer on Steam](https://store.steampowered.com/app/2834320/Exographer/)
+
+### Ornithographies
+- [Ornithographies by Xavi Bou](https://xavibou.com/ornithographies/)
 
 ## Resources
 
@@ -47,32 +73,8 @@ format: html
 
 ### Books
 
-- [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi) by Edward Tufte
-  - A classic book that provides foundational principles for data visualization.
+- Encyclopedia of Complexity and Systems Science by Robert A. Meyers
 
-- [Storytelling with Data](https://www.storytellingwithdata.com/) by Cole Nussbaumer Knaflic
-  - This book teaches you the fundamentals of data visualization and how to communicate effectively with data.
-
-- [Data Visualization: A Handbook for Data Driven Design](https://www.amazon.com/Data-Visualization-Handbook-Driven-Design/dp/1473912148) by Andy Kirk
-  - A practical guide to creating effective data visualizations.
+- [Making with Data - Physical Design and Craft in a Data-Driven World](https://makingwithdata.org/about)
 
 ### Tutorials and Courses
-
-- [Udacity Data Visualization Nanodegree](https://www.udacity.com/course/data-visualization-nanodegree--nd197)
-  - An online program that teaches the tools, techniques, and methodologies to visualize data.
-
-- [Coursera: Data Visualization with Python](https://www.coursera.org/learn/python-for-data-visualization)
-  - A course that covers the basics of data visualization using Python.
-
-- [LinkedIn Learning: Data Visualization](https://www.linkedin.com/learning/topics/data-visualization)
-  - A collection of courses and tutorials on various data visualization tools and techniques.
-
-## Community and Forums
-
-- [Data Visualization Society](https://www.datavisualizationsociety.com/)
-  - A community dedicated to advancing the field of data visualization.
-
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/data-visualization)
-  - A forum where you can ask questions and get answers related to data visualization.
-
-Feel free to explore these links and enhance your data visualization skills!

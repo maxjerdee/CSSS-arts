@@ -9,6 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - gallery.qmd
   
   sidebar:
     style: "docked"
@@ -16,6 +17,7 @@ website:
     contents:
       - index.qmd
       - about.qmd
+      - gallery.qmd
       
       - section: Projects
         auto: projects

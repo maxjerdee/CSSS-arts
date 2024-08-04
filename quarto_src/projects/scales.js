@@ -5,3 +5,25 @@ const noteNames = ["C2", "Db2", "D2", "Eb2", "E2", "F2", "Gb2", "G2", "Ab2", "A2
 const circleOfFifths = ["C", "G", "D", "A", "E", "B", "F#", "Db", "Ab", "Eb", "Bb", "F"];
 
 const circleOfFifthsBaseNumbers = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5];
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+<script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
+
+<div class="env">
+    <button id="switch_dir">Change Direction</button>
+    
+    <canvas id="boids" width="150" height="150"></canvas>
+    
+
+  </div>
+
+<!-- Custom code --> 
+<link rel="stylesheet" href="css/flocking.css">
+<script src="js/flocking.js"></script> 
+
+<svg width=100% xmlns="http://www.w3.org/2000/svg">
+      <path d="M206.954 60.6741C206.954 93.8112 185.091 80.4006 151.954 80.4006C118.817 80.4006 86.9538 93.8112 86.9538 60.6741C86.9538 27.537 113.817 0.674084 146.954 0.674084C180.091 0.674084 206.954 27.537 206.954 60.6741Z" fill="#FD922E"/>
+      <path d="M57.6779 70.2266L0 56.652V87H700V41.5691L637.079 56.652L497.69 41.5691L435.643 56.652L393.695 51.1216L374.032 56.652L312.859 29L277.466 41.5691H196.192L156.866 56.652L116.23 51.1216L57.6779 70.2266Z" fill="#0E0507"/>
+    </svg>
+

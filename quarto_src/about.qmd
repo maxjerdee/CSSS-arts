@@ -2,7 +2,6 @@
 title: "About"
 ---
 
-
 ## Art in Complexity: A manifesto for visual collective experimentation  
 edited by Sara Mesquita
 

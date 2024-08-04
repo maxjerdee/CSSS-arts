@@ -1,8 +1,9 @@
 [
     {
       "src": "images/image_sunflower.png",
-      "alt": "Artwork 1",
-      "artist": "Artist Name 1"
+      "artist": "Artist Name 1",
+      "description": "This is a sunflower image",
+      "birthyear": "1989"
     },
     {
       "src": "image2.jpg",
